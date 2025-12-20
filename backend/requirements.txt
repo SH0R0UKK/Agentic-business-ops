@@ -1,0 +1,20 @@
+# Web Framework (API)
+fastapi
+uvicorn
+python-multipart   # Required for File Uploads (Excel/CSV)
+
+# AI & Agents
+langgraph
+langchain-google-genai
+langchain-core
+pydantic
+
+# MLOps & Monitoring
+mlflow
+
+# Data Processing
+pandas
+python-dotenv
+
+# Database (Optional for now, but good to have)
+supabase
