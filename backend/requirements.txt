@@ -2,12 +2,18 @@
 fastapi
 uvicorn
 python-multipart   # Required for File Uploads (Excel/CSV)
+requests           # <--- ADDED: Needed for Perplexity API calls
 
 # AI & Agents
 langgraph
 langchain-google-genai
 langchain-core
-pydantic
+pydantic           # <--- CRITICAL: Needed for data validation
+
+# Vector DB & Embeddings (The "Librarian")
+chromadb           # <--- ADDED: The local vector database
+sentence-transformers # <--- ADDED: To turn text into vectors locally (Free)
+pypdf              # <--- ADDED: To read PDF files for the knowledge base
 
 # MLOps & Monitoring
 mlflow
@@ -16,5 +22,5 @@ mlflow
 pandas
 python-dotenv
 
-# Database (Optional for now, but good to have)
+# Database (Optional)
 supabase
