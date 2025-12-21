@@ -1,46 +1,56 @@
 import logging
+import asyncio
 from typing import TypedDict, Optional
 from langgraph.graph import StateGraph, END
 
-# Import your existing tools (No changes needed to these files!)
-from .tools_online import BudgetPerplexitySearcher
-from .tools_offline import LocalLibrarian
-from .models import ResearchResult, ResearchTask
+# Import your existing tools
+from .tools_online import BudgetPerplexitySearcher, online_research_with_llm
+from .tools_offline import LocalLibrarian, offline_research_with_llm
+from .models import (
+    ResearchResult, ResearchTask, 
+    OfflineEvidencePack, OnlineBenchmarkPack, CombinedResearchResult
+)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("ResearchGraph")
 
+
 # --- 1. DEFINE THE STATE ---
-# This dictionary tracks the data as it moves through the graph
 class AgentState(TypedDict):
-    task: ResearchTask                # The input query & rules
-    final_result: Optional[ResearchResult] # Where we store the answer
-    error_message: Optional[str]      # Track failure reasons for debugging
+    task: ResearchTask                         # The input query & rules
+    final_result: Optional[ResearchResult]     # Legacy: simple result
+    offline_pack: Optional[OfflineEvidencePack]  # New: structured offline
+    online_pack: Optional[OnlineBenchmarkPack]   # New: structured online
+    error_message: Optional[str]               # Track failure reasons
+
 
 class ResearchAgent:
-    def __init__(self, perplexity_api_key: str):
-        # Initialize the tools exactly like before
-        self.librarian = LocalLibrarian()
-        self.searcher = BudgetPerplexitySearcher(api_key=perplexity_api_key)
+    """
+    Research Agent that combines offline RAG and online search.
+    Provides both legacy simple results and new structured packs for Gap Analysis.
+    """
+    
+    def __init__(self, perplexity_api_key: str = None):
+        import os
+        self.api_key = perplexity_api_key or os.getenv("PERPLEXITY_API_KEY")
         
-        # Build the Graph
+        # Initialize the tools
+        self.librarian = LocalLibrarian()
+        self.searcher = BudgetPerplexitySearcher(api_key=self.api_key)
+        
+        # Build the Graph (legacy flow)
         self.graph = self._build_graph()
 
     def _build_graph(self):
-        # Initialize the StateGraph
+        """Build LangGraph workflow for legacy simple research flow."""
         workflow = StateGraph(AgentState)
 
-        # --- 2. DEFINE NODES ---
-        # Nodes take the current state, do work, and return updated state
-        
         def check_local_memory(state: AgentState):
             logger.info("🔹 Node: Checking Local Memory")
             query = state["task"].query
             try:
-                # Use your existing tool
                 result = self.librarian.search(query)
-                # We return the key we want to update
                 return {"final_result": result, "error_message": None}
             except Exception as e:
                 logger.error(f"❌ Local memory check failed: {e}")
@@ -50,7 +60,6 @@ class ResearchAgent:
             logger.info("🔹 Node: Searching Online (Perplexity)")
             task = state["task"]
             try:
-                # Use your existing tool
                 result = self.searcher.search(task.query, task.grounding_rules)
                 if result is None:
                     error_msg = "Online search returned None (possible API failure)"
@@ -66,12 +75,10 @@ class ResearchAgent:
             result = state["final_result"]
             query = state["task"].query
             
-            # Critical: Guard against None results
             if result is None:
                 logger.warning("⚠️ Cannot save None result to memory")
                 return {"error_message": "Result was None, skipping save"}
             
-            # Logic: Only save if it's a good result
             if result.confidence_score >= 6:
                 try:
                     self.librarian.save_memory(result, query)
@@ -82,27 +89,19 @@ class ResearchAgent:
             else:
                 logger.info(f"⏭️ Skipped save - confidence score too low: {result.confidence_score}")
             
-            # This node doesn't change the state, just performs an action
             return {}
 
-        # --- 3. BUILD THE GRAPH STRUCTURE ---
-        
-        # Add the nodes to the graph
+        # Add nodes
         workflow.add_node("check_local", check_local_memory)
         workflow.add_node("search_online", search_online)
         workflow.add_node("save_memory", save_to_memory)
 
-        # Define the ENTRY POINT (Start here)
         workflow.set_entry_point("check_local")
 
-        # --- 4. CONDITIONAL EDGES (The Logic) ---
-        
         def decide_next_step(state: AgentState):
-            # If we found a result in local memory, we are done!
             if state.get("final_result"):
                 logger.info("✅ Found result locally, ending")
                 return "end"
-            # Otherwise, go to online search
             logger.info("❌ No local result, proceeding to online search")
             return "search"
 
@@ -110,33 +109,35 @@ class ResearchAgent:
             "check_local",
             decide_next_step,
             {
-                "end": END,             # If found -> Finish
-                "search": "search_online" # If missing -> Search Online
+                "end": END,
+                "search": "search_online"
             }
         )
 
-        # Standard Edge: Online Search -> Always try to Save -> End
         workflow.add_edge("search_online", "save_memory")
         workflow.add_edge("save_memory", END)
 
-        # Compile the graph
         return workflow.compile()
 
     def perform_research(self, task: ResearchTask) -> ResearchResult:
         """
-        The public method to run the agent.
+        Legacy method: Run simple research graph.
+        Returns a single ResearchResult.
         """
         logger.info(f"🚀 Starting Research Graph for: {task.query}")
         
-        # Run the graph!
-        initial_state = {"task": task, "final_result": None, "error_message": None}
+        initial_state = {
+            "task": task, 
+            "final_result": None, 
+            "offline_pack": None,
+            "online_pack": None,
+            "error_message": None
+        }
         output_state = self.graph.invoke(initial_state)
         
-        # Extract and return result
         result = output_state.get("final_result")
         error_message = output_state.get("error_message")
         
-        # Fallback if something went wrong
         if not result:
             failure_reason = error_message or "Unknown error"
             logger.error(f"❌ Research failed: {failure_reason}")
@@ -145,8 +146,82 @@ class ResearchAgent:
                 key_statistics=[],
                 citations=[],
                 source_type="online",
-                confidence_score=1  # Minimum valid score for failures
+                confidence_score=1
             )
         
         logger.info(f"✅ Research completed with confidence {result.confidence_score}/10")
         return result
+
+    async def perform_combined_research(
+        self, 
+        question: str,
+        startup_context: dict = None,
+        profile_context: dict = None
+    ) -> CombinedResearchResult:
+        """
+        New method: Run both offline and online research with LLM reasoning.
+        Returns structured packs for Gap Analysis Agent.
+        
+        Args:
+            question: Research question
+            startup_context: Optional startup profile for offline search
+            profile_context: Optional profile context for online search
+        
+        Returns:
+            CombinedResearchResult with both offline and online packs
+        """
+        logger.info(f"🚀 Starting Combined Research for: {question}")
+        
+        # Run both research paths concurrently
+        offline_task = offline_research_with_llm(question, startup_context)
+        online_task = online_research_with_llm(question, profile_context)
+        
+        offline_pack, online_pack = await asyncio.gather(
+            offline_task, 
+            online_task,
+            return_exceptions=True
+        )
+        
+        # Handle exceptions
+        if isinstance(offline_pack, Exception):
+            logger.error(f"Offline research failed: {offline_pack}")
+            offline_pack = OfflineEvidencePack(
+                question=question,
+                summary=f"Error: {str(offline_pack)}",
+                claims=[],
+                contradictions=[],
+                missing_info=[],
+                status="error"
+            )
+        
+        if isinstance(online_pack, Exception):
+            logger.error(f"Online research failed: {online_pack}")
+            online_pack = OnlineBenchmarkPack(
+                question=question,
+                summary=f"Error: {str(online_pack)}",
+                findings=[],
+                assumptions=[],
+                prohibited_uses=[],
+                status="error"
+            )
+        
+        logger.info("✅ Combined research completed")
+        
+        return CombinedResearchResult(
+            offline=offline_pack,
+            online=online_pack
+        )
+
+    def perform_combined_research_sync(
+        self, 
+        question: str,
+        startup_context: dict = None,
+        profile_context: dict = None
+    ) -> CombinedResearchResult:
+        """
+        Synchronous wrapper for perform_combined_research.
+        Use this when you can't use async/await.
+        """
+        return asyncio.run(
+            self.perform_combined_research(question, startup_context, profile_context)
+        )

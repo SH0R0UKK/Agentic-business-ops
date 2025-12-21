@@ -1,0 +1,668 @@
+[
+  {
+    "url": "https://www.techstars.com/blog/advice/inside-a-techstars-accelerator-the-application-and-interview-process",
+    "title": "Inside a Techstars Accelerator: The Application and Interview Process",
+    "doc_type": "accelerator_application_guide",
+    "scope": "global",
+    "topic": "accelerator_screening",
+    "language_hint": "en",
+    "priority": 1
+  },
+  {
+    "url": "https://xraise.ai/blog/how-to-get-accepted-to-techstars-accelerators/",
+    "title": "How to Get Accepted to Techstars Accelerator",
+    "doc_type": "accelerator_application_guide",
+    "scope": "global",
+    "topic": "accelerator_screening",
+    "language_hint": "en",
+    "priority": 1
+  },
+  {
+    "url": "https://www.storydoc.com/blog/y-combinator-pitch-deck-examples",
+    "title": "How to Write a Y Combinator Pitch Deck (+Templates)",
+    "doc_type": "pitch_deck_guide",
+    "scope": "global",
+    "topic": "pitch_deck",
+    "language_hint": "en",
+    "priority": 2
+  },
+  {
+    "url": "https://www.neweconomies.co/p/the-ultimate-yc-pitch-deck",
+    "title": "The Ultimate YC Pitch Deck",
+    "doc_type": "pitch_deck_guide",
+    "scope": "global",
+    "topic": "pitch_deck",
+    "language_hint": "en",
+    "priority": 2
+  },
+  {
+    "url": "https://www.slideshare.net/slideshow/sequoia-capital-pitchdecktemplate/46231251",
+    "title": "Sequoia Capital Pitch Deck Template",
+    "doc_type": "pitch_deck_template",
+    "scope": "global",
+    "topic": "pitch_deck",
+    "language_hint": "en",
+    "priority": 3
+  },
+  {
+    "url": "https://www.inknarrates.com/post/pitch-deck-format-sequoia-yc-guy-kawasaki",
+    "title": "Sequoia & Y Combinator Pitch Deck Template (Format, Examples)",
+    "doc_type": "pitch_deck_guide",
+    "scope": "global",
+    "topic": "pitch_deck",
+    "language_hint": "en",
+    "priority": 3
+  },
+  {
+    "url": "https://visible.vc/blog/investment-memo/",
+    "title": "Investment Memos: Tips, Templates, and How to Write One",
+    "doc_type": "investment_memo_guide",
+    "scope": "global",
+    "topic": "investor_memo",
+    "language_hint": "en",
+    "priority": 3
+  },
+  {
+    "url": "https://www.kodekx.com/blog/b2b-saas-metrics-churn-cac-ltv-mrr",
+    "title": "B2B SaaS Metrics: Churn, CAC, LTV & MRR Benchmarks",
+    "doc_type": "metrics_playbook",
+    "scope": "global",
+    "topic": "metrics",
+    "language_hint": "en",
+    "priority": 4
+  },
+  {
+    "url": "https://revpartners.io/hubfs/PDFs/SaaS%20Metric%20Cheat%20sheet.pdf?hsLang=en",
+    "title": "SaaS Metrics & Benchmark Cheat Sheet (PDF) - RevPartners",
+    "doc_type": "metrics_cheatsheet_pdf",
+    "scope": "global",
+    "topic": "metrics",
+    "language_hint": "en",
+    "priority": 4
+  },
+  {
+    "url": "https://burklandassociates.com/2024/01/02/ltvcac-an-important-but-often-misunderstood-saas-metric/",
+    "title": "LTV:CAC - An Important (But Often Misunderstood) SaaS Metric",
+    "doc_type": "metrics_playbook",
+    "scope": "global",
+    "topic": "metrics",
+    "language_hint": "en",
+    "priority": 4
+  },
+  {
+    "url": "https://www.hustlefund.vc/post/the-complete-guide-to-pre-seed-capital-everything-angel-investors-need-to-know",
+    "title": "The Complete Guide to Pre-Seed Capital",
+    "doc_type": "startup_evaluation_framework",
+    "scope": "global",
+    "topic": "accelerator_screening",
+    "language_hint": "en",
+    "priority": 5
+  },
+  {
+    "url": "https://www.linkedin.com/posts/jeanlucscherer_the-10-key-criteria-to-raise-pre-seed-activity-7299020137481793536-B8yV",
+    "title": "How to Raise Pre-Seed or Seed Funding: 10 Key Criteria (LinkedIn post)",
+    "doc_type": "startup_evaluation_framework",
+    "scope": "global",
+    "topic": "fundraising",
+    "language_hint": "en",
+    "priority": 5
+  },
+  {
+    "url": "https://www.angelschool.vc/blog/startup-due-diligence-checklist-for-angel-investors",
+    "title": "Startup Due Diligence Checklist for Angel Investors",
+    "doc_type": "due_diligence_checklist",
+    "scope": "global",
+    "topic": "due_diligence",
+    "language_hint": "en",
+    "priority": 5
+  },
+  {
+    "url": "https://www.affinity.co/guides/due-diligence-checklist-for-venture-capital",
+    "title": "Due diligence checklist for venture capital",
+    "doc_type": "due_diligence_checklist",
+    "scope": "global",
+    "topic": "due_diligence",
+    "language_hint": "en",
+    "priority": 6
+  },
+  {
+    "url": "https://qubit.capital/blog/startup-evaluation-checklist",
+    "title": "Startup Evaluation Checklist: Essential Investment Criteria",
+    "doc_type": "startup_evaluation_framework",
+    "scope": "global",
+    "topic": "due_diligence",
+    "language_hint": "en",
+    "priority": 6
+  },
+  {
+    "url": "https://goldeneggcheck.com/en/how-to-build-a-consistent-framework-for-assessing-startup-quality/",
+    "title": "How to build a consistent framework for assessing startup quality",
+    "doc_type": "startup_evaluation_framework",
+    "scope": "global",
+    "topic": "accelerator_screening",
+    "language_hint": "en",
+    "priority": 6
+  },
+  {
+    "url": "https://www.valuwit.com/en/business-model-canvas-business-idea-validation/",
+    "title": "How to Use Business Model Canvas for Business Validation",
+    "doc_type": "bmc_guide",
+    "scope": "global",
+    "topic": "bmc",
+    "language_hint": "en",
+    "priority": 7
+  },
+  {
+    "url": "https://kcdf.org/toolkit/utilizing-the-business-model-canvas-for-market-validation-a-guide-for-women-and-minority-owned-msmes212",
+    "title": "Utilizing the Business Model Canvas for Market Validation",
+    "doc_type": "bmc_guide",
+    "scope": "global",
+    "topic": "bmc",
+    "language_hint": "en",
+    "priority": 7
+  },
+  {
+    "url": "https://lumosbusiness.com/customer-validation/",
+    "title": "Customer Validation Process",
+    "doc_type": "customer_validation_guide",
+    "scope": "global",
+    "topic": "validation",
+    "language_hint": "en",
+    "priority": 7
+  },
+  {
+    "url": "https://maccelerator.la/en/blog/entrepreneurship/product-market-fit-a-checklist-for-early-stage-founders/",
+    "title": "Product-Market Fit: A Checklist for Early-Stage Founders",
+    "doc_type": "pmf_checklist",
+    "scope": "global",
+    "topic": "pmf",
+    "language_hint": "en",
+    "priority": 8
+  },
+  {
+    "url": "https://www.shared-impact.com/toolkits-resources/startup-checklist-for-early-stage-fundraising/",
+    "title": "A Startup Founder's Checklist for Early-Stage Fundraising",
+    "doc_type": "fundraising_checklist",
+    "scope": "global",
+    "topic": "fundraising",
+    "language_hint": "en",
+    "priority": 8
+  },
+  {
+    "url": "https://thcpathfinder.com/from-idea-to-mvp/",
+    "title": "From Idea to MVP: Turning a Concept into an Investment-Ready Product",
+    "doc_type": "mvp_guide",
+    "scope": "global",
+    "topic": "mvp",
+    "language_hint": "en",
+    "priority": 8
+  },
+  {
+    "url": "https://mcit.gov.eg/Upcont/Documents/Reports%20and%20Documents_292024000_Egyptian_Entrepreneurship_Sector_Diagnostics_Report.pdf",
+    "title": "Egyptian Entrepreneurship Sector Diagnostics Report (PDF)",
+    "doc_type": "ecosystem_report",
+    "scope": "egypt",
+    "topic": "ecosystem",
+    "language_hint": "en",
+    "priority": 9
+  },
+  {
+    "url": "https://entlaq.com/storage/app/documents/kkAg7Y3SNLpEGWWh2PMfXtLCQ7R4ya5PAviFEVHC.pdf",
+    "title": "Egyptian Fin-Tech Landscape 2024 (PDF)",
+    "doc_type": "sector_report",
+    "scope": "egypt",
+    "topic": "sector_fintech",
+    "language_hint": "en",
+    "priority": 10
+  },
+  {
+    "url": "https://www.oecd.org/en/publications/sme-and-entrepreneurship-policy-in-egypt_195d9c43-en/full-report/",
+    "title": "SME and Entrepreneurship Policy in Egypt (OECD) - Full Report",
+    "doc_type": "policy_report",
+    "scope": "egypt",
+    "topic": "policy_regulation",
+    "language_hint": "en",
+    "priority": 11
+  },
+  {
+    "url": "https://www.legal500.com/guides/chapter/egypt-fintech/?export-pdf",
+    "title": "Egypt: Fintech (Legal 500 Guide) - PDF Export",
+    "doc_type": "regulatory_guide",
+    "scope": "egypt",
+    "topic": "policy_regulation",
+    "language_hint": "en",
+    "priority": 11
+  },
+  {
+    "url": "https://www.menagrid.co/reports/startup-ecosystem-report-2024",
+    "title": "MENA Startup Ecosystem Report 2024",
+    "doc_type": "ecosystem_report",
+    "scope": "mena",
+    "topic": "ecosystem",
+    "language_hint": "en",
+    "priority": 12
+  },
+  {
+    "url": "https://www.rasmal.com/mena-startup-ecosystem/",
+    "title": "MENA Startup Ecosystem: Trends, Challenges and Opportunities",
+    "doc_type": "ecosystem_report",
+    "scope": "mena",
+    "topic": "ecosystem",
+    "language_hint": "en",
+    "priority": 12
+  },
+  {
+    "url": "https://www.rasmal.com/mena-startup-funding-report-september-2024/",
+    "title": "MENA Startup Funding Report (September 2024)",
+    "doc_type": "funding_report",
+    "scope": "mena",
+    "topic": "ecosystem",
+    "language_hint": "en",
+    "priority": 12
+  },
+  {
+    "url": "https://www.menabytes.com/flat6labs-new-offering/",
+    "title": "Flat6Labs Cairo new offering (MENAbytes)",
+    "doc_type": "accelerator_program_overview",
+    "scope": "egypt",
+    "topic": "accelerator_ops",
+    "language_hint": "en",
+    "priority": 13
+  },
+  {
+    "url": "https://flat6labs.com/Location/egypt/",
+    "title": "Flat6Labs - Egypt",
+    "doc_type": "accelerator_program_overview",
+    "scope": "egypt",
+    "topic": "accelerator_ops",
+    "language_hint": "en",
+    "priority": 13
+  },
+  {
+    "url": "https://www.ifc.org/en/stories/2022/flat6labs-accelerates-transformation-in-mena",
+    "title": "Flat6Labs Accelerates Transformation in MENA (IFC story)",
+    "doc_type": "accelerator_program_overview",
+    "scope": "mena",
+    "topic": "accelerator_ops",
+    "language_hint": "en",
+    "priority": 13
+  },
+  {
+    "url": "https://maccelerator.la/en/blog/entrepreneurship/ultimate-guide-to-startup-mentorship/",
+    "title": "Ultimate Guide to Startup Mentorship",
+    "doc_type": "mentorship_playbook",
+    "scope": "global",
+    "topic": "mentorship",
+    "language_hint": "en",
+    "priority": 14
+  },
+  {
+    "url": "https://coachello.ai/blog/startup-coaching/",
+    "title": "Startup Coaching: Guide to Growth, Strategy & Success",
+    "doc_type": "coaching_guide",
+    "scope": "global",
+    "topic": "mentorship",
+    "language_hint": "en",
+    "priority": 14
+  },
+  {
+    "url": "https://howdo.com/masterclass/tools/startup-accelerator/",
+    "title": "Guide To Building A Startup Accelerator",
+    "doc_type": "accelerator_ops_guide",
+    "scope": "global",
+    "topic": "accelerator_ops",
+    "language_hint": "en",
+    "priority": 14
+  },
+  {
+    "url": "https://fuelfinance.me/blog/financial-model-template",
+    "title": "What's the Right Financial Model Template for Your Startup Stage?",
+    "doc_type": "financial_modeling_template",
+    "scope": "global",
+    "topic": "financial_modeling",
+    "language_hint": "en",
+    "priority": 16
+  },
+  {
+    "url": "https://www.linkedin.com/pulse/how-build-financial-model-seed-stage-company-alex-salazar",
+    "title": "How to Build a Financial Model at a Seed Stage Company (LinkedIn)",
+    "doc_type": "financial_modeling_guide",
+    "scope": "global",
+    "topic": "financial_modeling",
+    "language_hint": "en",
+    "priority": 16
+  },
+  {
+    "url": "https://www.hubspot.com/startups/fundraising/startup-financial-projections-template/",
+    "title": "How To Create Startup Financial Projections (+Template)",
+    "doc_type": "financial_modeling_template",
+    "scope": "global",
+    "topic": "financial_modeling",
+    "language_hint": "en",
+    "priority": 16
+  },
+  {
+    "url": "https://xraise.ai/blog/how-to-get-accepted-to-500-global-flagship-accelerator/",
+    "title": "How to Get Accepted to 500 Global Flagship Accelerator",
+    "doc_type": "accelerator_application_guide",
+    "scope": "global",
+    "topic": "accelerator_screening",
+    "language_hint": "en",
+    "priority": 17
+  },
+  {
+    "url": "https://xraise.ai/blog/how-to-get-accepted-to-plug-and-play-accelerator/",
+    "title": "How to Get Accepted to Plug and Play Accelerator",
+    "doc_type": "accelerator_application_guide",
+    "scope": "global",
+    "topic": "accelerator_screening",
+    "language_hint": "en",
+    "priority": 17
+  },
+  {
+    "url": "https://pitchbob.io/library/accelerators/how-to-navigate-500-global-a-step-by-step-guide-pitchbob-io",
+    "title": "How to Navigate 500 Global: A Step-by-Step Guide",
+    "doc_type": "accelerator_application_guide",
+    "scope": "global",
+    "topic": "accelerator_screening",
+    "language_hint": "en",
+    "priority": 17
+  },
+  {
+    "url": "https://pitchbob.io/library/accelerators/how-to-join-plug-and-play-tech-center-a-startup-s-step-by-step-guide-pitchbob-io",
+    "title": "How to Join Plug and Play Tech Center: A Startup's Step-by-Step Guide",
+    "doc_type": "accelerator_application_guide",
+    "scope": "global",
+    "topic": "accelerator_screening",
+    "language_hint": "en",
+    "priority": 17
+  },
+  {
+    "url": "https://www.byfounders.vc/insights/8ts",
+    "title": "How We Evaluate Companies: Our 8 T Framework",
+    "doc_type": "startup_evaluation_framework",
+    "scope": "global",
+    "topic": "due_diligence",
+    "language_hint": "en",
+    "priority": 18
+  },
+  {
+    "url": "https://www.rasmal.com/female-founders-in-mena/",
+    "title": "The Rise of Female Founders in MENA",
+    "doc_type": "diversity_report",
+    "scope": "mena",
+    "topic": "diversity_inclusion",
+    "language_hint": "en",
+    "priority": 19
+  },
+  {
+    "url": "https://www.weforum.org/stories/2025/05/how-women-entrepreneurs-are-reshaping-the-middle-east-s-business-landscape/",
+    "title": "How women entrepreneurs are reshaping MENA's business landscape (WEF)",
+    "doc_type": "diversity_report",
+    "scope": "mena",
+    "topic": "diversity_inclusion",
+    "language_hint": "en",
+    "priority": 19
+  },
+  {
+    "url": "https://www.almasryalyoum.com/news/details/4137657",
+    "title": "مصر تحتل المركز 65 عالميًا في بيئة الشركات الناشئة (Egypt ranks 65th globally in startup ecosystem)",
+    "doc_type": "ecosystem_report_arabic",
+    "scope": "egypt",
+    "topic": "ecosystem",
+    "language_hint": "ar",
+    "priority": 9
+  },
+  {
+    "url": "https://ecss.com.eg/43921/",
+    "title": "الشركات الناشئة بمصر في ظل تباطؤ الاستثمار عالميا (Egyptian Startups Amid Global Investment Slowdown)",
+    "doc_type": "ecosystem_analysis_arabic",
+    "scope": "egypt",
+    "topic": "ecosystem",
+    "language_hint": "ar",
+    "priority": 9
+  },
+  {
+    "url": "https://egyptinnovate.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1/%D9%81%D9%83%D8%B1%D8%AA%D9%83-%D8%B4%D8%B1%D9%83%D8%AA%D9%83-%D8%AA",
+    "title": "فكرتك شركتك تُدشّن برنامج المسار السريع (Your Idea Your Company Fast Track Program)",
+    "doc_type": "government_initiative_arabic",
+    "scope": "egypt",
+    "topic": "government_support",
+    "language_hint": "ar",
+    "priority": 10
+  },
+  {
+    "url": "https://sis.gov.eg/ar/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2-%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%85%D9%8A",
+    "title": "2025 ريادة إقليمية ومسار متكامل نحو الاقتصاد الأخضر (2025 Regional Leadership & Green Economy)",
+    "doc_type": "government_report_arabic",
+    "scope": "egypt",
+    "topic": "sustainability_innovation",
+    "language_hint": "ar",
+    "priority": 10
+  },
+  {
+    "url": "https://www.msmeda.org.eg/be/Gallery/Reports/9031bfb1-cac6-43e5-b4ac-e4dd686aaa44.pdf",
+    "title": "ريـادة الأعمال والشركات الناشئة في مصر والعالم (Entrepreneurship & Startups Egypt-World) PDF",
+    "doc_type": "msme_report_pdf_arabic",
+    "scope": "egypt",
+    "topic": "ecosystem",
+    "language_hint": "ar",
+    "priority": 9
+  },
+  {
+    "url": "https://www.eeic.gov.eg",
+    "title": "مركز مصر لريادة الأعمال والابتكار (Egypt Center for Entrepreneurship & Innovation)",
+    "doc_type": "government_agency_arabic",
+    "scope": "egypt",
+    "topic": "government_support",
+    "language_hint": "ar",
+    "priority": 10
+  },
+  {
+    "url": "https://journals.ekb.eg/article_393899.html",
+    "title": "ريادة الأعمال ودورها في التوظف وجذب الاستثمار (Entrepreneurship Role in Employment & FDI)",
+    "doc_type": "academic_research_arabic",
+    "scope": "egypt",
+    "topic": "ecosystem",
+    "language_hint": "ar",
+    "priority": 11
+  },
+  {
+    "url": "https://tiec.gov.eg/Arabic/Pages/StartupsCompanies.aspx",
+    "title": "الشركات الناشئة (Startups) - TIEC Government Program",
+    "doc_type": "government_initiative_arabic",
+    "scope": "egypt",
+    "topic": "government_support",
+    "language_hint": "ar",
+    "priority": 10
+  },
+  {
+    "url": "https://flat6labs.com/ar/",
+    "title": "Flat6Labs - الصفحة الرئيسية (Arabic Homepage)",
+    "doc_type": "accelerator_program_arabic",
+    "scope": "egypt",
+    "topic": "accelerator_ops",
+    "language_hint": "ar",
+    "priority": 13
+  },
+  {
+    "url": "https://idsc.gov.eg/upload/DocumentLibrary/AttachmentA/10522/Startups%20Paper-%20Generic%20(2).pdf",
+    "title": "تمكين الشركات الناشئة وريادة الأعمال في مصر (Enabling Startups & Entrepreneurship) PDF",
+    "doc_type": "government_policy_pdf_arabic",
+    "scope": "egypt",
+    "topic": "government_support",
+    "language_hint": "ar",
+    "priority": 10
+  },
+  {
+    "url": "https://egyptinnovate.com/ar/articles/%D8%AA%D8%B4%D9%8A%D8%B1-%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%84%D8%A7%D8%AA",
+    "title": "تشير التحولات في دعم الشركات الناشئة من ITIDA (ITIDA Support Evolution)",
+    "doc_type": "sector_analysis_arabic",
+    "scope": "egypt",
+    "topic": "government_support",
+    "language_hint": "ar",
+    "priority": 10
+  },
+  {
+    "url": "https://swaed.sa/types-of-business-incubators/",
+    "title": "أنواع حاضنات الأعمال: دليلك لاختيار الحاضنة المناسبة (Types of Business Incubators Guide)",
+    "doc_type": "incubator_guide_arabic",
+    "scope": "mena",
+    "topic": "accelerator_ops",
+    "language_hint": "ar",
+    "priority": 14
+  },
+  {
+    "url": "https://www.abdelazizandpartners.com/blog/new-company-law-regulations.html",
+    "title": "النظام الجديد لتأسيس الشركات الناشئة في مصر (New Startup Company Registration System)",
+    "doc_type": "legal_regulatory_guide_arabic",
+    "scope": "egypt",
+    "topic": "policy_regulation",
+    "language_hint": "ar",
+    "priority": 11
+  },
+  {
+    "url": "https://riadynews.com/%D9%88%D9%85%D8%B6%D8%A9-25-7-%D9%85%D9%86-%D9%85%D8%A4%D8%B3%D8%B3%D9%8A-%D8%A7%D9%84%D8%B4%D8%B1%D9%83",
+    "title": "ومضة: 25.7% من مؤسسى الشركات الناشئة بالشرق الأوسط (Wamda: 25.7% of MENA Founders are Egyptian)",
+    "doc_type": "ecosystem_report_arabic",
+    "scope": "mena",
+    "topic": "ecosystem",
+    "language_hint": "ar",
+    "priority": 12
+  },
+  {
+    "url": "https://mseg.journals.ekb.eg/article_115640_502389e80b445bd9b0718019a2098ff7.pdf",
+    "title": "تطوير حاضنات الأعمال الجامعية في مصر (Developing University Business Incubators) PDF",
+    "doc_type": "academic_research_pdf_arabic",
+    "scope": "egypt",
+    "topic": "accelerator_ops",
+    "language_hint": "ar",
+    "priority": 14
+  },
+  {
+    "url": "https://www.eta.gov.eg/ar/content/qwanyn-aldrybt-ly-aldkhl",
+    "title": "قوانين الضريبة على الدخل (Income Tax Laws - Egyptian Tax Authority)",
+    "doc_type": "tax_regulation_arabic",
+    "scope": "egypt",
+    "topic": "policy_regulation",
+    "language_hint": "ar",
+    "priority": 11
+  },
+  {
+    "url": "https://www.parlmany.com/News/6/591236/%D8%A7%D9%84%D9%88%D8%B2%D8%B1%D8%A7%D8%A1-%D9%85%D8%B5%D8%B1-%D8%A7%D9%84%D8%A3%D9%88",
+    "title": "الوزراء: مصر الأولى أفريقيًا والـ65 عالميًا (Cabinet: Egypt #1 Africa, 65th Global Startup Ranking)",
+    "doc_type": "government_statement_arabic",
+    "scope": "egypt",
+    "topic": "ecosystem",
+    "language_hint": "ar",
+    "priority": 9
+  },
+  {
+    "url": "https://entarabi.com/2023/10/%D8%AD%D8%A7%D8%B6%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84",
+    "title": "اهم حاضنات الأعمال للشركات الناشئة في مصر 2025 (Top Business Incubators Egypt 2025)",
+    "doc_type": "incubator_directory_arabic",
+    "scope": "egypt",
+    "topic": "accelerator_ops",
+    "language_hint": "ar",
+    "priority": 13
+  },
+  {
+    "url": "https://edariba.com/%D9%83%D9%84-%D9%85%D8%A7-%D8%AA%D8%AD%D8%AA%D8%A7%D8%AC-%D9%85%D8%B9%D8%B1%D9%81%D8%AA%D9%87-%D8%B9%D9%86",
+    "title": "كل ما تحتاج معرفته عن قانون التسهيلات الضريبية الجديدة (New Tax Incentives Law Guide)",
+    "doc_type": "tax_incentives_guide_arabic",
+    "scope": "egypt",
+    "topic": "policy_regulation",
+    "language_hint": "ar",
+    "priority": 11
+  },
+  {
+    "url": "https://itida.gov.eg/Arabic/Blogs/Pages/The-Easiest-Steps-to-Starting-Your-Own-Business.aspx",
+    "title": "7 خطوات ذكية لبدء شركتك الناشئة (7 Smart Steps to Start Your Startup - ITIDA)",
+    "doc_type": "startup_guide_arabic",
+    "scope": "egypt",
+    "topic": "government_support",
+    "language_hint": "ar",
+    "priority": 10
+  },
+  {
+    "url": "https://affiegy.com/55744/%D8%AA%D9%85%D9%88%D9%8A%D9%84-%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D8%A7%D8%B4",
+    "title": "تمويل الشركات الناشئة في مصر - الذكاء الصناعي (Startup Funding Egypt - AI Focus)",
+    "doc_type": "funding_guide_arabic",
+    "scope": "egypt",
+    "topic": "fundraising",
+    "language_hint": "ar",
+    "priority": 10
+  },
+  {
+    "url": "https://startup-sync.com/ar/%D9%85%D9%86%D8%B5%D8%A9-%D8%B1%D9%8A%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84-s",
+    "title": "منصة ريادة الأعمال في مصر: ستارت أب سينك (StartUp Sync Platform Egypt)",
+    "doc_type": "platform_guide_arabic",
+    "scope": "egypt",
+    "topic": "fundraising",
+    "language_hint": "ar",
+    "priority": 10
+  },
+  {
+    "url": "https://www.linkedin.com/posts/edkang99_the-ultimate-pitch-deck-template-review-guide-activity-7325911041148682241-1RAv",
+    "title": "How to create the right pitch deck for your startup (LinkedIn Thread by Ed Kang)",
+    "doc_type": "social_media_insight",
+    "scope": "global",
+    "topic": "pitch_deck",
+    "language_hint": "en",
+    "priority": 3
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=s2mhvDQ2Nrg",
+    "title": "From Cairo to Growing Global Startups in Abu Dhabi! (Flat6Labs Video Interview)",
+    "doc_type": "video_interview_arabic_english",
+    "scope": "egypt",
+    "topic": "accelerator_ops",
+    "language_hint": "en",
+    "priority": 13
+  },
+  {
+    "url": "https://www.linkedin.com/pulse/startup-founder-raising-capital-mena-here-top-10-ai-prompts-rangen-rifnf",
+    "title": "Startup founder raising capital in MENA? Top 10 AI prompts (LinkedIn Pulse)",
+    "doc_type": "social_media_insight",
+    "scope": "mena",
+    "topic": "fundraising",
+    "language_hint": "en",
+    "priority": 5
+  },
+  {
+    "url": "https://www.instagram.com/p/DNDt9S3thcO/",
+    "title": "Flat6Labs Africa Roadshow 2024 highlights (Instagram post)",
+    "doc_type": "social_media_insight",
+    "scope": "mena",
+    "topic": "accelerator_ops",
+    "language_hint": "en",
+    "priority": 13
+  },
+  {
+    "url": "https://www.linkedin.com/posts/sabooashish_first-time-founder-in-2025-heres-my-exact-activity-7377288356038283264-78ib",
+    "title": "How to be a first-time founder in 2025 (LinkedIn Thread by Ashish Saboo)",
+    "doc_type": "social_media_insight",
+    "scope": "global",
+    "topic": "startup_tips",
+    "language_hint": "en",
+    "priority": 8
+  },
+  {
+    "url": "https://www.menabytes.com/egypt-tech-startup-ecosystem-guide/",
+    "title": "A guide to Egypt's tech startup ecosystem (MENAbytes 2018)",
+    "doc_type": "ecosystem_guide",
+    "scope": "egypt",
+    "topic": "ecosystem",
+    "language_hint": "en",
+    "priority": 9
+  },
+  {
+    "url": "https://www.linkedin.com/posts/muhammadchbib_%F0%9D%97%AA%F0%9D%97%B5%F0%9D%98%86-%F0%9D%97%AE%F0%9D%97%BF%F0%9D%97",
+    "title": "Why MENA startups still shine despite funding drops (LinkedIn Thread)",
+    "doc_type": "social_media_insight",
+    "scope": "mena",
+    "topic": "fundraising",
+    "language_hint": "en",
+    "priority": 12
+  }
+]
