@@ -1,0 +1,14 @@
+artifact_uri: file:C:/Users/hanae/OneDrive - Nile University/Desktop/MLops project/Agentic-business-ops/mlruns/817911265315112499/27fa2cb25f6d46c7b504c3dd2406db2f/artifacts
+end_time: 1766378768196
+entry_point_name: ''
+experiment_id: '817911265315112499'
+lifecycle_stage: active
+run_id: 27fa2cb25f6d46c7b504c3dd2406db2f
+run_name: fortunate-frog-120
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766378724242
+status: 3
+tags: []
+user_id: hanae

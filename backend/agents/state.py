@@ -9,11 +9,17 @@ class MasterState(TypedDict):
     messages: Annotated[List[BaseMessage], add_messages]
     
     # --- CONTEXT ---
-    user_context: dict
+    user_context: dict  # Business context (can be from onboarding or manually provided)
+    
+    # --- ONBOARDING STATE (NEW) ---
+    onboarding_status: Optional[str]  # "pending", "in_progress", "completed", "skipped"
+    onboarding_files: Optional[List[str]]  # File paths to process
+    processed_files: Optional[List[dict]]  # Processed file data with text/images
     
     # --- ROUTING CONTROL ---
-    next_agent: str       # "planner", "gap_agent", "researcher", "rag_agent"
+    next_agent: str       # "onboarding", "planner", "gap_agent", "researcher", "research"
     action: str           # "route" or "reply"
+    iteration_count: Optional[int]  # Safety counter to prevent infinite loops
     
     # --- TASK SPECIFIC INPUTS (Passed to Workers) ---
     task_type: str        # For Planner: "timeline" or "advisory"

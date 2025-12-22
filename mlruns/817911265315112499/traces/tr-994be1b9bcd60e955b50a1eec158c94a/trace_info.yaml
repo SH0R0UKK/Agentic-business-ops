@@ -1,0 +1,27 @@
+execution_duration_ms: 354647
+request_preview: '{"messages": [{"content": "Please analyze my business documents
+  and provide a summary.", "additional_kwargs": {}, "response_metadata": {}, "type":
+  "human", "name": null, "id": null}], "user_context": {"org_id": "test_company_source"},
+  "onboarding_files": null, "onboarding_status": "pending", "action": null, "next_agent":
+  null, "search_query": null, "task_type": null, "final_plan": null, "research_offline":
+  null, "research_online": null, "final_reply": null}'
+request_time: '2025-12-22T04:02:37.926Z'
+response_preview: '{"messages": [{"content": "Please analyze my business documents
+  and provide a summary.", "additional_kwargs": {}, "response_metadata": {}, "type":
+  "human", "name": null, "id": "f520668a-1f56-4304-a6d2-5210e70d719c"}], "user_context":
+  {"business_name": "Urban Plant Life", "business_type": "Boutique Plant Shop & Interior
+  Greening Consultancy", "location": "Cairo, Egypt (Physical Hub) + Online Store",
+  "stage": "Growth", "goals": ["Reconnect urban dwellers with nature through curated
+  plant collections and education", "Launch Cairo Shade Collection for low-light apartment
+  environments", "Expand e-commerce through digital-physical hybrid model", "Reduce
+  refund rates through customer education via Plant Clinic sessions", "Establish partnerships
+  with local ceramic artisans for exclusive products", "Secure contracts with local
+  growers to reduce import costs and carbon footprint"], "constraints": ["Small team
+  and limited budget", "Cannot compete on advertising spend with larger competitors",
+  ...'
+state: OK
+trace_id: tr-994be1b9bcd60e955b50a1eec158c94a
+trace_location:
+  mlflow_experiment:
+    experiment_id: '817911265315112499'
+  type: MLFLOW_EXPERIMENT

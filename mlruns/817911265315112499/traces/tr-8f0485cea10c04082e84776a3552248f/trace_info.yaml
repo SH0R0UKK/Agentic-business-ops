@@ -1,0 +1,26 @@
+execution_duration_ms: 15332
+request_preview: '{"messages": [{"content": "Please analyze my business documents
+  and provide a summary.", "additional_kwargs": {}, "response_metadata": {}, "type":
+  "human", "name": null, "id": null}], "user_context": {"org_id": "test_company_source"},
+  "onboarding_files": null, "onboarding_status": "pending", "action": null, "next_agent":
+  null, "search_query": null, "task_type": null, "final_plan": null, "research_offline":
+  null, "research_online": null, "final_reply": null}'
+request_time: '2025-12-22T04:33:28.597Z'
+response_preview: '{"messages": [{"content": "Please analyze my business documents
+  and provide a summary.", "additional_kwargs": {}, "response_metadata": {}, "type":
+  "human", "name": null, "id": "11ca5672-2e3b-4ec5-a443-08014138ea79"}], "user_context":
+  {"business_name": "Urban Plant Life", "business_type": "Boutique Plant Shop & Interior
+  Greening Consultancy", "location": "Cairo, Egypt", "stage": "Growth", "goals": ["Reconnect
+  urban dwellers with nature", "Offer curated plant collections and education", "Enhance
+  customer lifestyle through serenity, sustainability, and aesthetic improvement",
+  "Expand e-commerce presence", "Enter niche markets", "Improve employee productivity
+  through biophilic design (secondary audience goal)", "Reduce import costs and carbon
+  footprint", "Reduce refund rates due to plant death", "Secure a loyal market share"],
+  "constraints": ["Small Team", "Limited Budget", "Need to avoid academic botanical
+  jargon", "Apartment living (audience constraint)", "Time-poor audience (audience...'
+state: OK
+trace_id: tr-8f0485cea10c04082e84776a3552248f
+trace_location:
+  mlflow_experiment:
+    experiment_id: '817911265315112499'
+  type: MLFLOW_EXPERIMENT

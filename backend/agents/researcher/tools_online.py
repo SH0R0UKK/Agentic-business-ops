@@ -124,10 +124,27 @@ Include 3-5 most relevant results."""
             
             raw_content = response.json()['choices'][0]['message']['content']
             
-            if raw_content.startswith("```json"):
-                raw_content = raw_content.replace("```json", "").replace("```", "")
-            elif raw_content.startswith("```"):
-                raw_content = raw_content.replace("```", "")
+            # Clean markdown code blocks
+            import re
+            raw_content = re.sub(r'```json\s*', '', raw_content)
+            raw_content = re.sub(r'```\s*', '', raw_content)
+            raw_content = raw_content.strip()
+            
+            # Try to find JSON in the response
+            if not raw_content.startswith('{'):
+                json_match = re.search(r'\{[\s\S]*\}', raw_content)
+                if json_match:
+                    raw_content = json_match.group(0)
+                else:
+                    # Sonar returned text, not JSON - create fallback result
+                    logger.warning(f"Sonar returned text instead of JSON, creating fallback result")
+                    return [{
+                        "snippet": raw_content[:500],
+                        "url": "perplexity_search",
+                        "title": query[:50],
+                        "published_at": "unknown",
+                        "source_name": "Perplexity AI"
+                    }]
             
             data = json.loads(raw_content)
             
@@ -146,6 +163,19 @@ Include 3-5 most relevant results."""
             logger.info(f"📋 Retrieved {len(results)} raw results")
             return results
             
+        except json.JSONDecodeError as e:
+            logger.error(f"❌ JSON parsing failed: {e}")
+            logger.debug(f"Raw content: {raw_content[:200] if 'raw_content' in locals() else 'N/A'}...")
+            # Return fallback with whatever text we got
+            if 'raw_content' in locals() and raw_content:
+                return [{
+                    "snippet": raw_content[:500],
+                    "url": "perplexity_search",
+                    "title": query[:50],
+                    "published_at": "unknown",
+                    "source_name": "Perplexity AI"
+                }]
+            return []
         except Exception as e:
             logger.error(f"❌ Raw search failed: {e}")
             return []

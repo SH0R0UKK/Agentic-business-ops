@@ -1,0 +1,25 @@
+execution_duration_ms: 22117
+request_preview: '{"messages": [{"content": "Create a 30-day product launch plan with
+  marketing milestones.", "additional_kwargs": {}, "response_metadata": {}, "type":
+  "human", "name": null, "id": null}], "user_context": {"business_name": "TechStart
+  Egypt", "business_type": "SaaS - Project Management", "location": "Cairo, Egypt",
+  "stage": "MVP", "goals": ["Launch beta version in Q1", "Acquire 100 pilot users",
+  "Raise seed funding"], "sector": "technology"}, "onboarding_files": null, "action":
+  null, "next_agent": null, "search_query": null, "task_type": null, "final_plan":
+  null, "research_offline": null, "research_online": null, "final_reply": null}'
+request_time: '2025-12-22T02:42:10.545Z'
+response_preview: '{"messages": [{"content": "Create a 30-day product launch plan
+  with marketing milestones.", "additional_kwargs": {}, "response_metadata": {}, "type":
+  "human", "name": null, "id": "eabe023e-ac44-4837-b3a8-d9279c0e0cc4"}], "user_context":
+  {"business_name": "TechStart Egypt", "business_type": "SaaS - Project Management",
+  "location": "Cairo, Egypt", "stage": "MVP", "goals": ["Launch beta version in Q1",
+  "Acquire 100 pilot users", "Raise seed funding"], "sector": "technology"}, "onboarding_files":
+  null, "next_agent": null, "action": "reply", "task_type": null, "search_query":
+  null, "final_plan": null, "research_offline": null, "research_online": null, "final_reply":
+  "I encountered a system error."}'
+state: OK
+trace_id: tr-9a716f6de371f2787567f1a04a34a3c9
+trace_location:
+  mlflow_experiment:
+    experiment_id: '817911265315112499'
+  type: MLFLOW_EXPERIMENT
