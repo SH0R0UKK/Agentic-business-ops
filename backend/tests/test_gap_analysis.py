@@ -1,5 +1,5 @@
 import os
-from agents.gap_analysis import gap_analysis_node
+from backend.agents.gap_analysis.agent import gap_analysis_node
 
 def test_tourism_case():
     os.environ["LLM_PROVIDER"] = "mock"  # run offline

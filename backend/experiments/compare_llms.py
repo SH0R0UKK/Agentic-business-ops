@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from agents.gap_analysis import gap_analysis_node
+from backend.agents.gap_analysis.agent import gap_analysis_node
 from evaluation.metrics import evaluate_gap_quality
 
 # Test cases

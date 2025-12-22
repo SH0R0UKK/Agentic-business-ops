@@ -102,7 +102,7 @@ def _call_sonar(messages: List[Dict], response_format: Optional[Dict] = None) ->
 
 def call_llm(messages: List[Dict], response_format: Optional[Dict] = None) -> str:
     # Read provider at RUNTIME, not import time
-    provider = os.getenv("LLM_PROVIDER", "mock").lower()
+    provider = os.getenv("LLM_PROVIDER", "sonar").lower()
     
     if provider == "openai":
         return _call_openai(messages, response_format)
@@ -110,4 +110,6 @@ def call_llm(messages: List[Dict], response_format: Optional[Dict] = None) -> st
         return _call_gemini(messages, response_format)
     if provider == "sonar":  
         return _call_sonar(messages, response_format)
-    return _call_mock(messages, response_format)
+    
+    # Default to sonar if provider not recognized
+    return _call_sonar(messages, response_format)

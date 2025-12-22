@@ -12,6 +12,7 @@ from backend.agents.state import MasterState
 from backend.agents.Planner.planner import app_graph as planner_graph 
 from backend.agents.researcher.agent import run_research_agent
 from backend.agents.onboarding.agent import run_onboarding
+from backend.agents.gap_analysis.agent import gap_analysis_node
 from .prompts import get_supervisor_prompt
 
 # --- CONFIG ---
@@ -272,10 +273,19 @@ def supervisor_node(state: MasterState):
     else:
         research_status = "N/A"  # No research has been completed yet
     
+    # Check gap analysis completion
+    internal_gaps = state.get('internal_gaps', [])
+    market_gaps = state.get('market_gaps', [])
+    
+    if internal_gaps or market_gaps:
+        gap_status = f"{len(internal_gaps)} internal gaps, {len(market_gaps)} market gaps identified - GAP ANALYSIS COMPLETE"
+    else:
+        gap_status = "None"
+    
     context_snapshot = f"""
     - Latest Planner Output: {planner_summary}
     - Research Status: {research_status}
-    - Gap Analysis: {state.get('gap_analysis', 'N/A')}
+    - Gap Analysis: {gap_status}
     """
 
     # 2. Generate Prompt
@@ -306,10 +316,10 @@ def supervisor_node(state: MasterState):
 workflow = StateGraph(MasterState)
 
 workflow.add_node("supervisor", supervisor_node)
-workflow.add_node("onboarding", onboarding_node)  # NEW: Onboarding node
+workflow.add_node("onboarding", onboarding_node)  # Onboarding node
 workflow.add_node("planner", planner_graph)
 workflow.add_node("research", research_node)  # Research node with LLM reasoning
-workflow.add_node("gap_agent", placeholder_node)
+workflow.add_node("gap_agent", gap_analysis_node)  # Gap analysis node
 
 # Entry point: ALWAYS start with onboarding to check for source files
 def entry_router(state: MasterState):
