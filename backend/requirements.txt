@@ -2,25 +2,34 @@
 fastapi
 uvicorn
 python-multipart   # Required for File Uploads (Excel/CSV)
-requests           # <--- ADDED: Needed for Perplexity API calls
+requests           # Needed for Perplexity API calls
 
 # AI & Agents
 langgraph
-langchain-google-genai
+langchain-openai   # For Perplexity API via OpenAI-compatible interface
 langchain-core
-pydantic           # <--- CRITICAL: Needed for data validation
+pydantic           # Data validation and models
 
-# Vector DB & Embeddings (The "Librarian")
-chromadb           # <--- ADDED: The local vector database
-sentence-transformers # <--- ADDED: To turn text into vectors locally (Free)
-pypdf              # <--- ADDED: To read PDF files for the knowledge base
+# Vector DB & Embeddings
+chromadb           # Local vector database
+sentence-transformers # Text embeddings (multilingual-e5-small)
+pypdf              # PDF file processing
 
-# MLOps & Monitoring
-mlflow
+# Observability (Optional - only if LANGSMITH_API_KEY is set)
+langsmith          # LangSmith tracing (optional, non-intrusive)
 
 # Data Processing
 pandas
 python-dotenv
 
-# Database (Optional)
-supabase
+# OCR & Document Processing
+pytesseract        # Tesseract OCR wrapper
+Pillow             # Image processing
+
+# Testing
+pytest             # Test framework
+pytest-asyncio     # Async test support
+httpx              # HTTP client for API testing
+
+# Database
+# sqlite3 is built-in

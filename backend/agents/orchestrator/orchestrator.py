@@ -11,7 +11,7 @@ from langgraph.graph import StateGraph, END
 from backend.agents.state import MasterState
 from backend.agents.Planner.planner import app_graph as planner_graph 
 from backend.agents.researcher.agent import run_research_agent
-from .onboarding.agent import run_onboarding
+from backend.agents.onboarding.agent import run_onboarding
 from .prompts import get_supervisor_prompt
 
 # --- CONFIG ---

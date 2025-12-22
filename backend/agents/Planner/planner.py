@@ -13,20 +13,12 @@ from langchain_core.messages import SystemMessage, HumanMessage, BaseMessage, AI
 
 # Tools & Config
 from dotenv import load_dotenv
-from backend.tools.calculator import check_calendar_availability  # Ensure this path is correct
-from backend.agents.Planner.prompts import get_planner_prompt     # <--- NEW UNIFIED PROMPT IMPORT
-
-# MLOps
-import mlflow
-import mlflow.langchain
+from backend.tools.calculator import check_calendar_availability
+from backend.agents.Planner.prompts import get_planner_prompt
+from backend.tools.tracing import trace_run, log_event
 
 # --- BLOCK 1: SETUP ---
 load_dotenv()
-
-# Setup MLflow
-mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", "file:./mlruns"))
-mlflow.set_experiment("Business_Planning_Agent")
-mlflow.langchain.autolog()
 
 # Setup LLM - Using Perplexity Sonar Reasoning Pro for complex planning
 llm = ChatOpenAI(
@@ -83,11 +75,10 @@ def planning_node(state: AgentState):
                         else:
                             research_context += f"  {i}. {finding}\n"
 
-    # 2. Get Unified Prompt (No more if/else for task_type)
+    # 2. Get Unified Prompt
     sys_msg_content = get_planner_prompt(current_date, context)
 
-    # 3. Construct System Message
-    # We explicitly tell it to use tools or output JSON
+    # 3. Construct System Message with tracing support
     final_sys_msg = f"""{sys_msg_content}
     {research_context}
     
@@ -99,12 +90,16 @@ def planning_node(state: AgentState):
     - Your response MUST end with a valid JSON object (the final plan).
     """
 
-    # 4. Execute LLM
-    with mlflow.start_run():
+    # 4. Execute LLM with tracing
+    with trace_run("planner_llm_call", metadata={"context_keys": list(context.keys())}):
+        log_event("planner_input", {"user_msg_length": len(user_msg)})
+        
         response = llm_with_tools.invoke([
             SystemMessage(content=final_sys_msg),
             *state["messages"]
         ])
+        
+        log_event("planner_output", {"has_tool_calls": bool(response.tool_calls)})
 
     # 5. Handle Tool Calls vs. Final Output
     # CASE A: The Agent wants to use a tool (Calendar)
