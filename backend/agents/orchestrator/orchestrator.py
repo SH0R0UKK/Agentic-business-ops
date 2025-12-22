@@ -1,5 +1,3 @@
-# backend/agents/orchestrator/orchestrator.py
-
 import os
 import json
 import asyncio
@@ -288,11 +286,26 @@ def supervisor_node(state: MasterState):
     - Gap Analysis: {gap_status}
     """
 
-    # 2. Generate Prompt
-    prompt_text = get_supervisor_prompt(context_snapshot, last_user_msg, user_context)
+    # 2. Prepare Variables (Logic moved here to avoid "ValueError" in templates)
+    # FIX 2: We calculate the strings here, so the prompt just sees clean variables
+   # 2. Prepare Variables
+    prompt_variables = {
+        # CHANGE THIS: Use 'biz_name' to match the {biz_name} in your template
+        "biz_name": user_context.get('business_name', 'The Business'),
+        
+        # CHANGE THIS: Use 'biz_type' to match the {biz_type} in your template
+        "biz_type": user_context.get('business_type', 'General Business'),
+        
+        "goals": str(user_context.get('goals', 'Improve operations')),
+        "context_snapshot": context_snapshot,
+        "user_msg": last_user_msg
+    }
+    # 3. Create Chain & Invoke
+    # FIX 3: Use the chain (Template | LLM)
+    chain = supervisor_prompt_template | llm_supervisor
     
-    # 3. Call LLM (Using HumanMessage to fix 400 error)
-    response = llm_supervisor.invoke([HumanMessage(content=prompt_text)])
+    # We pass the dictionary of variables
+    response = chain.invoke(prompt_variables)
     
     # 4. Force response to JSON format (handles all edge cases)
     try:

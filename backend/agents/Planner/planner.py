@@ -1,3 +1,5 @@
+# backend/agents/planner/graph.py
+
 import os
 import datetime
 import operator
@@ -9,7 +11,7 @@ from typing import Annotated, TypedDict, List, Union
 from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, END
 from langgraph.prebuilt import ToolNode, tools_condition
-from langchain_core.messages import SystemMessage, HumanMessage, BaseMessage, AIMessage
+from langchain_core.messages import SystemMessage, HumanMessage, BaseMessage
 
 # Tools & Config
 from dotenv import load_dotenv
@@ -36,9 +38,7 @@ llm_with_tools = llm.bind_tools(tools)
 
 # --- BLOCK 2: STATE DEFINITION ---
 class AgentState(TypedDict):
-    # Shared conversation history
     messages: Annotated[List[BaseMessage], operator.add]
-    # Context injected by Orchestrator
     user_context: dict
     # Research results from Research Agent (passed through MasterState)
     research_offline: dict
@@ -102,9 +102,9 @@ def planning_node(state: AgentState):
         log_event("planner_output", {"has_tool_calls": bool(response.tool_calls)})
 
     # 5. Handle Tool Calls vs. Final Output
+    
     # CASE A: The Agent wants to use a tool (Calendar)
     if response.tool_calls:
-        # We return the message so the graph can route to "tools" node
         return {"messages": [response]}
     
     # CASE B: The Agent is done and is returning the JSON plan
@@ -114,7 +114,6 @@ def planning_node(state: AgentState):
             # Clean raw content (strip Markdown formatting)
             raw_content = response.content
             if isinstance(raw_content, list):
-                 # Handle generic list content if needed
                  raw_content = "".join([b["text"] for b in raw_content if "text" in b])
             
             content_str = str(raw_content)
@@ -140,7 +139,7 @@ def planning_node(state: AgentState):
             # Parse
             parsed_plan = json.loads(clean_content)
             
-            # Validate keys exist (Optional safety)
+            # Validate keys exist
             if "chat_summary" not in parsed_plan:
                 parsed_plan["chat_summary"] = "Plan generated."
 
@@ -152,8 +151,7 @@ def planning_node(state: AgentState):
                 "chat_summary": "I created a plan but there was a formatting error."
             }
         
-        # CRITICAL FIX: We return 'final_plan' here.
-        # This populates the key in MasterState so the Orchestrator sees it.
+        # Return final_plan to the Orchestrator
         return {
             "messages": [response],
             "final_plan": parsed_plan 

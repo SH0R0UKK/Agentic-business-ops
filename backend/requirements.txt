@@ -21,6 +21,6 @@ langsmith          # LangSmith tracing (optional, non-intrusive)
 # Data Processing
 pandas
 python-dotenv
-
+holidays
 # Database (Optional for now, but good to have)
 supabase

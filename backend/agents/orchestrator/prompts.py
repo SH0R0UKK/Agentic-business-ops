@@ -1,16 +1,20 @@
 # backend/agents/orchestrator/prompts.py
+from langchain_core.prompts import ChatPromptTemplate
+
+# 1. Define the System Template
+SUPERVISOR_SYSTEM_TEMPLATE = """
 
 def get_supervisor_prompt(context_snapshot: str, user_msg: str, user_context: dict) -> str:
-    """
+    
     Generates the system prompt for the Supervisor using dynamic business data.
     Enforces clear sequential workflow: Research → Gap Analysis → Planning → Response
-    """
+    
     # 1. Extract Business Details (Defaults provided for safety)
     biz_name = user_context.get('business_name', 'The Business')
     biz_type = user_context.get('business_type', 'General Business')
     goals = user_context.get('goals', 'Improve operations and efficiency')
     
-    return f"""
+    return f
 ### ROLE
 You are the Strategic Advisor for **{biz_name}** ({biz_type}).
 **Mission:** Provide actionable business insights using a structured analytical workflow.
