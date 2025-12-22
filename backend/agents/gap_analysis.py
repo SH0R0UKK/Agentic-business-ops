@@ -83,7 +83,7 @@ def gap_analysis_node(state: Dict) -> Dict:
 
     # Enforce your rules
     min_conf = float(os.getenv("GAP_MIN_CONFIDENCE", "0.5"))
-    max_gaps = int(os.getenv("GAP_MAX_TOTAL", "10"))
+    max_gaps = int(os.getenv("GAP_MAX_TOTAL", "15"))
     internal, market = filter_and_cap_gaps(internal, market, min_confidence=min_conf, max_total=max_gaps)
 
     # Write back to state
