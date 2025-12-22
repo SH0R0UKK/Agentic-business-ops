@@ -22,14 +22,5 @@ langsmith          # LangSmith tracing (optional, non-intrusive)
 pandas
 python-dotenv
 
-# OCR & Document Processing
-pytesseract        # Tesseract OCR wrapper
-Pillow             # Image processing
-
-# Testing
-pytest             # Test framework
-pytest-asyncio     # Async test support
-httpx              # HTTP client for API testing
-
-# Database
-# sqlite3 is built-in
+# Database (Optional for now, but good to have)
+supabase

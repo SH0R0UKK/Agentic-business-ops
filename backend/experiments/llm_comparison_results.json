@@ -1,0 +1,516 @@
+[
+  {
+    "provider": "gemini",
+    "case": "Tourism",
+    "metrics": {
+      "hallucination": {
+        "hallucination_rate": 1.0,
+        "unsupported_gaps": 5,
+        "supported_gaps": 0,
+        "score": 1.0
+      },
+      "grounding": {
+        "grounding_rate": 0.8,
+        "grounded_gaps": 4,
+        "total_gaps": 5,
+        "score": 0.8
+      },
+      "relevance": {
+        "relevance_score": 1.0,
+        "relevant_gaps": 5,
+        "total_gaps": 5,
+        "score": 1.0
+      },
+      "coverage": {
+        "coverage_score": 0.0,
+        "found_categories": [
+          "Funding",
+          "Marketing"
+        ],
+        "expected_categories": [
+          "process",
+          "resource",
+          "channels"
+        ],
+        "missing_categories": [
+          "resource",
+          "channels",
+          "process"
+        ],
+        "score": 0.0
+      },
+      "severity_calibration": {
+        "calibration_score": 0.375,
+        "distribution": {
+          "critical": 5
+        },
+        "score": 0.375
+      },
+      "overall_score": 0.7875,
+      "total_gaps": 5
+    },
+    "gaps": [
+      {
+        "gap_id": "IG001",
+        "category": "Marketing",
+        "description": "NileCruise Tours currently lacks dedicated marketing capabilities or personnel, especially in critical areas like social media and digital campaign management, which are essential for achieving the user goal.",
+        "severity": "critical",
+        "confidence": 1.0,
+        "reasoning": "Current capabilities are limited to 'tour booking' and 'customer support.' The user goal is to launch a significant marketing campaign, which requires specific expertise and resources not currently listed as existing.",
+        "related_to_goal": true,
+        "sources": [
+          "startup_profile['current_capabilities']",
+          "user_goal"
+        ]
+      },
+      {
+        "gap_id": "IG002",
+        "category": "Funding",
+        "description": "There is no clear indication of an allocated marketing budget, and based on industry best practices, the current monthly revenue may not support the necessary investment for a high-impact 3-month campaign to increase bookings by 50%.",
+        "severity": "critical",
+        "confidence": 0.8,
+        "reasoning": "Best practices suggest allocating 20-30% of revenue to marketing (i.e., $3,000-$4,500 monthly for NileCruise Tours). Without an explicit budget or dedicated marketing function, it's highly probable that the necessary funds for an aggressive campaign are not yet secured or defined.",
+        "related_to_goal": true,
+        "sources": [
+          "startup_profile['monthly_revenue']",
+          "research_summary['best_practices'][0]",
+          "user_goal"
+        ]
+      },
+      {
+        "gap_id": "MG001",
+        "category": "Marketing",
+        "description": "NileCruise Tours lacks a significant social media presence, specifically on platforms like Instagram, which are crucial for attracting tourism bookings.",
+        "severity": "critical",
+        "confidence": 1.0,
+        "reasoning": "Market trends indicate social media drives 60% of tourism bookings. Competitor EgyptExplorer has a strong Instagram presence (50k followers), significantly above the industry average of 30k, while NileCruise Tours has no stated social media presence.",
+        "related_to_goal": true,
+        "competitive_threat": "EgyptExplorer's established and strong Instagram following gives them a major advantage in customer acquisition and brand visibility, capturing a large segment of the target audience that NileCruise Tours is missing.",
+        "sources": [
+          "research_summary['market_trends'][0]",
+          "research_summary['competitor_analysis'][0]",
+          "research_summary['industry_benchmarks']"
+        ]
+      },
+      {
+        "gap_id": "MG002",
+        "category": "Marketing",
+        "description": "NileCruise Tours does not appear to utilize key digital marketing tools and strategies such as email automation, SEO, or paid advertising, which are actively leveraged by competitors.",
+        "severity": "critical",
+        "confidence": 0.9,
+        "reasoning": "Competitors EgyptExplorer uses 'Email automation' and PyramidAdventures has 'SEO #1 ranking' and 'Paid Google Ads.' These capabilities are not listed for NileCruise Tours, implying a significant disadvantage in reaching and converting online customers.",
+        "related_to_goal": true,
+        "competitive_threat": "Competitors effectively use email marketing, SEO, and paid ads to generate leads and bookings, gaining a significant edge in online discoverability, customer engagement, and conversion funnels, leaving NileCruise Tours behind.",
+        "sources": [
+          "startup_profile['current_capabilities']",
+          "research_summary['competitor_analysis'][0]",
+          "research_summary['competitor_analysis'][1]"
+        ]
+      },
+      {
+        "gap_id": "MG003",
+        "category": "Marketing",
+        "description": "NileCruise Tours has no apparent strategy for influencer partnerships, a channel proven to offer high ROI in the travel industry.",
+        "severity": "critical",
+        "confidence": 0.8,
+        "reasoning": "Market trends indicate influencer partnerships show 3x ROI for travel companies. This represents a significant, unaddressed growth opportunity that could contribute to increasing bookings.",
+        "related_to_goal": true,
+        "competitive_threat": "Competitors could adopt or expand influencer strategies, capturing a cost-effective and high-impact marketing channel that NileCruise Tours is currently not utilizing, further widening the gap in marketing effectiveness.",
+        "sources": [
+          "research_summary['market_trends'][1]"
+        ]
+      }
+    ]
+  },
+  {
+    "provider": "gemini",
+    "case": "Fintech",
+    "metrics": {
+      "hallucination": {
+        "hallucination_rate": 1.0,
+        "unsupported_gaps": 6,
+        "supported_gaps": 0,
+        "score": 1.0
+      },
+      "grounding": {
+        "grounding_rate": 1.0,
+        "grounded_gaps": 6,
+        "total_gaps": 6,
+        "score": 1.0
+      },
+      "relevance": {
+        "relevance_score": 0.6666666666666666,
+        "relevant_gaps": 4,
+        "total_gaps": 6,
+        "score": 0.6666666666666666
+      },
+      "coverage": {
+        "coverage_score": 0.0,
+        "found_categories": [
+          "Product & Developer Relations",
+          "Compliance & Security",
+          "Market Coverage & Integrations",
+          "Performance & User Experience",
+          "Infrastructure & Reliability",
+          "Operational Efficiency & Customer Experience"
+        ],
+        "expected_categories": [
+          "process",
+          "technical",
+          "resource"
+        ],
+        "missing_categories": [
+          "technical",
+          "resource",
+          "process"
+        ],
+        "score": 0.0
+      },
+      "severity_calibration": {
+        "calibration_score": 0.75,
+        "distribution": {
+          "critical": 3,
+          "medium": 3
+        },
+        "score": 0.75
+      },
+      "overall_score": 0.7916666666666667,
+      "total_gaps": 6
+    },
+    "gaps": [
+      {
+        "gap_id": "I002",
+        "category": "Operational Efficiency & Customer Experience",
+        "description": "PayFlow relies on manual onboarding, which is significantly slower than automated KYC/AML processes and will impede the goal of onboarding 10 pilot customers quickly.",
+        "severity": "critical",
+        "confidence": 0.95,
+        "reasoning": "PayFlow has 'manual onboarding' (startup_profile.current_capabilities[1]). Research shows 'Automated KYC/AML reduces onboarding from 5 days to 1 hour' (market_trends[1]), highlighting a major inefficiency and bottleneck for the stated user goal.",
+        "related_to_goal": true,
+        "sources": [
+          "startup_profile.current_capabilities[1]",
+          "market_trends[1]"
+        ]
+      },
+      {
+        "gap_id": "I001",
+        "category": "Compliance & Security",
+        "description": "PayFlow lacks SOC2 compliance, which is a standard requirement for B2B fintech, potentially blocking deals with enterprise pilot customers.",
+        "severity": "critical",
+        "confidence": 0.9,
+        "reasoning": "Market trends indicate 'B2B fintech requires SOC2 compliance' (market_trends[0]). Competitor Stripe is 'SOC2 certified' (competitor_analysis[0]), setting an industry standard that PayFlow does not meet.",
+        "related_to_goal": true,
+        "sources": [
+          "market_trends[0]",
+          "competitor_analysis[0]"
+        ]
+      },
+      {
+        "gap_id": "I004",
+        "category": "Infrastructure & Reliability",
+        "description": "PayFlow has no stated uptime Service Level Agreement (SLA), falling short of industry benchmarks and leading competitors.",
+        "severity": "medium",
+        "confidence": 0.75,
+        "reasoning": "Industry benchmarks for uptime SLA are 0.999 (industry_benchmarks.uptime_sla). Competitor Stripe boasts '99.99% uptime' (competitor_analysis[0]). PayFlow's lack of a defined SLA suggests this is not yet a strength, potentially impacting long-term trust and perception of reliability.",
+        "related_to_goal": false,
+        "sources": [
+          "industry_benchmarks.uptime_sla",
+          "competitor_analysis[0]"
+        ]
+      },
+      {
+        "gap_id": "I003",
+        "category": "Product & Developer Relations",
+        "description": "Lack of explicit developer documentation for PayFlow's 'payment API' could lead to increased support burden and slower integration for pilot customers.",
+        "severity": "medium",
+        "confidence": 0.7,
+        "reasoning": "'Developer documentation reduces support tickets by 70%' (best_practices[0]). Without this, pilot customers integrating the 'payment API' (startup_profile.current_capabilities[0]) might face difficulties and require more assistance, indirectly impacting the team's capacity to support new customers.",
+        "related_to_goal": false,
+        "sources": [
+          "best_practices[0]",
+          "startup_profile.current_capabilities[0]"
+        ]
+      },
+      {
+        "gap_id": "M001",
+        "category": "Performance & User Experience",
+        "description": "PayFlow's current manual onboarding process prevents it from meeting the industry benchmark for 'time to first transaction' of 1 hour, making it less attractive than competitors.",
+        "severity": "critical",
+        "confidence": 0.9,
+        "reasoning": "The 'industry_benchmarks.time_to_first_transaction' is '1 hour'. PayFlow's 'manual onboarding' (startup_profile.current_capabilities[1]) is diametrically opposed to achieving this benchmark, especially when 'Automated KYC/AML reduces onboarding from 5 days to 1 hour' (market_trends[1]).",
+        "related_to_goal": true,
+        "competitive_threat": "high",
+        "sources": [
+          "industry_benchmarks.time_to_first_transaction",
+          "startup_profile.current_capabilities[1]",
+          "market_trends[1]",
+          "competitor_analysis[0]"
+        ]
+      },
+      {
+        "gap_id": "M002",
+        "category": "Market Coverage & Integrations",
+        "description": "PayFlow does not currently offer local bank partnerships or mobile wallet integrations, which are key strengths of regional competitors like PayMob.",
+        "severity": "medium",
+        "confidence": 0.8,
+        "reasoning": "Competitor 'PayMob' has 'Local bank partnerships' and 'Mobile wallet integration' (competitor_analysis[1]). PayFlow's profile does not list these capabilities, suggesting a potential gap in catering to specific local market needs or user preferences.",
+        "related_to_goal": false,
+        "competitive_threat": "medium",
+        "sources": [
+          "competitor_analysis[1]"
+        ]
+      }
+    ]
+  },
+  {
+    "provider": "sonar",
+    "case": "Tourism",
+    "metrics": {
+      "hallucination": {
+        "hallucination_rate": 1.0,
+        "unsupported_gaps": 4,
+        "supported_gaps": 0,
+        "score": 1.0
+      },
+      "grounding": {
+        "grounding_rate": 0.75,
+        "grounded_gaps": 3,
+        "total_gaps": 4,
+        "score": 0.75
+      },
+      "relevance": {
+        "relevance_score": 1.0,
+        "relevant_gaps": 4,
+        "total_gaps": 4,
+        "score": 1.0
+      },
+      "coverage": {
+        "coverage_score": 0.0,
+        "found_categories": [
+          "marketing_capabilities",
+          "nile_cruise_differentiation",
+          "marketing_budget",
+          "digital_marketing_adoption"
+        ],
+        "expected_categories": [
+          "process",
+          "resource",
+          "channels"
+        ],
+        "missing_categories": [
+          "resource",
+          "channels",
+          "process"
+        ],
+        "score": 0.0
+      },
+      "severity_calibration": {
+        "calibration_score": 0.375,
+        "distribution": {
+          "critical": 4
+        },
+        "score": 0.375
+      },
+      "overall_score": 0.775,
+      "total_gaps": 4
+    },
+    "gaps": [
+      {
+        "gap_id": "internal_001",
+        "category": "marketing_capabilities",
+        "description": "NileCruise Tours lacks marketing capabilities such as social media presence, influencer partnerships, SEO, paid ads, or email automation, which are essential given that social media drives 60% of bookings and competitors have strong digital marketing.",
+        "severity": "critical",
+        "confidence": 0.95,
+        "reasoning": "Current capabilities limited to tour booking and customer support; research shows heavy reliance on digital marketing for tourism success, with competitors excelling in Instagram followers (50k vs industry avg 30k), SEO, and ads.",
+        "related_to_goal": true,
+        "sources": [
+          "market_trends",
+          "market_trends[1]",
+          "competitor_analysis",
+          "competitor_analysis[1]",
+          "industry_benchmarks"
+        ]
+      },
+      {
+        "gap_id": "internal_002",
+        "category": "marketing_budget",
+        "description": "No evidence of allocated marketing budget; best practices recommend 20-30% of revenue ($3,000-$4,500/month based on $15k revenue) for marketing to support a 3-month campaign aiming for 50% booking increase.",
+        "severity": "critical",
+        "confidence": 0.85,
+        "reasoning": "Seed stage with small team (5 people) and modest revenue suggests limited funds; without budget, campaign execution is unfeasible despite MVP and revenue.",
+        "related_to_goal": true,
+        "sources": [
+          "best_practices"
+        ]
+      },
+      {
+        "gap_id": "market_001",
+        "category": "digital_marketing_adoption",
+        "description": "Competitors dominate social media (e.g., EgyptExplorer's 50k Instagram followers), SEO, and paid ads, while market trends emphasize social media (60% bookings) and influencers (3x ROI); NileCruise risks low visibility.",
+        "severity": "critical",
+        "confidence": 0.9,
+        "reasoning": "Industry benchmarks show avg 30k followers; startup has no mentioned presence, blocking competitive positioning for bookings growth.",
+        "related_to_goal": true,
+        "sources": [
+          "market_trends",
+          "market_trends[1]",
+          "competitor_analysis",
+          "competitor_analysis[1]",
+          "industry_benchmarks"
+        ],
+        "competitive_threat": "EgyptExplorer, PyramidAdventures"
+      },
+      {
+        "gap_id": "market_002",
+        "category": "nile_cruise_differentiation",
+        "description": "Rising demand for Nile cruises (e.g., growth in experiential travel, new ships/itineraries by 2026, 15.7M visitors in 2024) but no unique positioning like local partnerships, high-yield extensions, or seasonal expertise mentioned.",
+        "severity": "critical",
+        "confidence": 0.8,
+        "reasoning": "Market favors immersive Nile experiences with predictable demand and high margins; startup's generic tour booking misses opportunities in booming segment.",
+        "related_to_goal": true,
+        "sources": [
+          "[1]",
+          "[3]",
+          "[4]"
+        ],
+        "competitive_threat": "Tarot Tours, Abercrombie & Kent, Viking"
+      }
+    ]
+  },
+  {
+    "provider": "sonar",
+    "case": "Fintech",
+    "metrics": {
+      "hallucination": {
+        "hallucination_rate": 1.0,
+        "unsupported_gaps": 6,
+        "supported_gaps": 0,
+        "score": 1.0
+      },
+      "grounding": {
+        "grounding_rate": 1.0,
+        "grounded_gaps": 6,
+        "total_gaps": 6,
+        "score": 1.0
+      },
+      "relevance": {
+        "relevance_score": 0.8333333333333334,
+        "relevant_gaps": 5,
+        "total_gaps": 6,
+        "score": 0.8333333333333334
+      },
+      "coverage": {
+        "coverage_score": 0.0,
+        "found_categories": [
+          "compliance",
+          "developer_resources",
+          "local_integrations",
+          "self_serve_onboarding",
+          "uptime_reliability",
+          "onboarding_automation"
+        ],
+        "expected_categories": [
+          "process",
+          "technical",
+          "resource"
+        ],
+        "missing_categories": [
+          "technical",
+          "resource",
+          "process"
+        ],
+        "score": 0.0
+      },
+      "severity_calibration": {
+        "calibration_score": 0.5,
+        "distribution": {
+          "critical": 5,
+          "medium": 1
+        },
+        "score": 0.5
+      },
+      "overall_score": 0.8083333333333335,
+      "total_gaps": 6
+    },
+    "gaps": [
+      {
+        "gap_id": "internal_002",
+        "category": "onboarding_automation",
+        "description": "Reliance on manual onboarding instead of automated KYC/AML, which reduces onboarding time from 5 days to 1 hour; industry benchmark is 1 hour to first transaction.",
+        "severity": "critical",
+        "confidence": 0.98,
+        "reasoning": "Current capabilities list manual onboarding; trends highlight automation benefits; best practices and search results emphasize automation, progressive disclosure, and self-serve to meet benchmarks. Manual process prevents scaling to 10 pilots in 2 months.",
+        "related_to_goal": true,
+        "sources": [
+          "market_trends[1]",
+          "industry_benchmarks['time_to_first_transaction']",
+          "current_capabilities"
+        ]
+      },
+      {
+        "gap_id": "internal_001",
+        "category": "compliance",
+        "description": "Lack of SOC2 compliance, which is required for B2B fintech, while competitors like Stripe are certified.",
+        "severity": "critical",
+        "confidence": 0.95,
+        "reasoning": "research_summary explicitly states B2B fintech requires SOC2; Stripe's strength is SOC2 certification. Pre-seed stage with small team makes certification challenging, blocking trust and onboarding for pilot customers.",
+        "related_to_goal": true,
+        "sources": [
+          "market_trends[0]"
+        ]
+      },
+      {
+        "gap_id": "internal_003",
+        "category": "self_serve_onboarding",
+        "description": "No self-serve onboarding, unlike Stripe's model, limiting scalability for pilot customer acquisition.",
+        "severity": "critical",
+        "confidence": 0.9,
+        "reasoning": "Capabilities indicate manual onboarding; competitors have self-serve; multiple sources stress self-serve, progressive forms, and automation to reduce friction and support tickets.",
+        "related_to_goal": true,
+        "sources": [
+          "competitor_analysis[0]",
+          "best_practices[0]"
+        ]
+      },
+      {
+        "gap_id": "internal_004",
+        "category": "developer_resources",
+        "description": "Missing developer documentation, which reduces support tickets by 70%, critical for payment API adoption.",
+        "severity": "critical",
+        "confidence": 0.85,
+        "reasoning": "Current capabilities include payment API but no mention of docs; best practices highlight documentation's impact. With small team, this increases support burden during pilots.",
+        "related_to_goal": true,
+        "sources": [
+          "best_practices[0]",
+          "current_capabilities"
+        ]
+      },
+      {
+        "gap_id": "market_002",
+        "category": "uptime_reliability",
+        "description": "Unproven uptime (industry benchmark 99.9%), while Stripe offers 99.99%, risking trust for new payment API.",
+        "severity": "critical",
+        "confidence": 0.75,
+        "reasoning": "Benchmark provided; Stripe exceeds it. Pre-seed with MVP but no revenue suggests untested infrastructure.",
+        "related_to_goal": true,
+        "sources": [
+          "competitor_analysis[0]",
+          "industry_benchmarks['uptime_sla']"
+        ],
+        "competitive_threat": "high"
+      },
+      {
+        "gap_id": "market_001",
+        "category": "local_integrations",
+        "description": "No local bank partnerships or mobile wallet integration, unlike PayMob, potentially limiting appeal in specific markets.",
+        "severity": "medium",
+        "confidence": 0.8,
+        "reasoning": "Competitor PayMob strengths include these; not mentioned in PayFlow capabilities. May hinder pilots targeting regions needing local support.",
+        "related_to_goal": false,
+        "sources": [
+          "competitor_analysis[1]"
+        ],
+        "competitive_threat": "medium"
+      }
+    ]
+  }
+]
