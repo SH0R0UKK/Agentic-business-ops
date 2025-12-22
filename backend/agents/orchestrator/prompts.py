@@ -1,15 +1,9 @@
 # backend/agents/orchestrator/prompts.py
+from langchain_core.prompts import ChatPromptTemplate
 
-def get_supervisor_prompt(context_snapshot: str, user_msg: str, user_context: dict) -> str:
-    """
-    Generates the system prompt for the Supervisor using dynamic business data.
-    """
-    # 1. Extract Business Details (Defaults provided for safety)
-    biz_name = user_context.get('business_name', 'The Business')
-    biz_type = user_context.get('business_type', 'General Business')
-    goals = user_context.get('goals', 'Improve operations and efficiency')
-    
-    return f"""
+# 1. Define the System Template
+SUPERVISOR_SYSTEM_TEMPLATE = """
+
     ### ROLE
     You are the Chief Operations Officer (COO) for **{biz_name}** ({biz_type}).
     **Current Goal:** {goals}
@@ -41,3 +35,13 @@ def get_supervisor_prompt(context_snapshot: str, user_msg: str, user_context: di
       "reply_text": "..." (Required if action is reply)
     }}
     """
+
+# 2. Create the Template Object
+# We only need a System Message because the User Message is already embedded inside the system logic above
+# (Or you can split it into ("system", "..."), ("human", "{user_msg}") if you prefer standard chat structure)
+
+supervisor_prompt_template = ChatPromptTemplate.from_messages([
+    ("system", SUPERVISOR_SYSTEM_TEMPLATE),
+    # We add a dummy human message to ensure the LLM treats this as a conversation turn
+    ("human", "Proceed with the decision.") 
+])

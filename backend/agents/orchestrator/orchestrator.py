@@ -1,25 +1,23 @@
-# backend/agents/orchestrator/orchestrator.py
-
 import os
 import json
 from langchain_openai import ChatOpenAI
-from langchain_core.messages import SystemMessage, HumanMessage # <--- Ensure HumanMessage is imported
+from langchain_core.messages import SystemMessage, HumanMessage
 from langgraph.graph import StateGraph, END
 
 # --- LOCAL IMPORTS ---
 from backend.agents.state import MasterState
 from backend.agents.Planner.planner import app_graph as planner_graph 
-from .prompts import get_supervisor_prompt
+# FIX 1: Import the new Template Object, NOT the old function
+from .prompts import supervisor_prompt_template 
 
 # --- CONFIG ---
 llm_supervisor = ChatOpenAI(
-    model="sonar-pro",
+    model="sonar-reasoning-pro",
     temperature=0,
     openai_api_base="https://api.perplexity.ai",
     openai_api_key=os.getenv("PPLX_API_KEY"),
-    # --- ADD THESE LINES ---
-    request_timeout=120,      # Give it 2 minutes to search/think
-    max_retries=3,            # Try 3 times if connection drops
+    request_timeout=120,
+    max_retries=3
 )
 
 # --- PLACEHOLDER NODES ---
@@ -31,8 +29,7 @@ def supervisor_node(state: MasterState):
     last_user_msg = history[-1].content
     user_context = state.get('user_context', {})
     
-    # 1. Gather Snapshot
-    # Check if the planner has finished by looking for the specific key
+    # 1. Gather Context Snapshot
     planner_summary = state.get('final_plan', {}).get('chat_summary', 'N/A')
     
     context_snapshot = f"""
@@ -40,12 +37,37 @@ def supervisor_node(state: MasterState):
     - Research/Gap Data: N/A
     """
 
-    # 2. Generate Prompt
-    prompt_text = get_supervisor_prompt(context_snapshot, last_user_msg, user_context)
+    # 2. Prepare Variables (Logic moved here to avoid "ValueError" in templates)
+    # FIX 2: We calculate the strings here, so the prompt just sees clean variables
+   # 2. Prepare Variables
+    prompt_variables = {
+        # CHANGE THIS: Use 'biz_name' to match the {biz_name} in your template
+        "biz_name": user_context.get('business_name', 'The Business'),
+        
+        # CHANGE THIS: Use 'biz_type' to match the {biz_type} in your template
+        "biz_type": user_context.get('business_type', 'General Business'),
+        
+        "goals": str(user_context.get('goals', 'Improve operations')),
+        "context_snapshot": context_snapshot,
+        "user_msg": last_user_msg
+    }
+    # 3. Create Chain & Invoke
+    # FIX 3: Use the chain (Template | LLM)
+    chain = supervisor_prompt_template | llm_supervisor
     
-    # 3. Call LLM (Using HumanMessage to fix 400 error)
-    response = llm_supervisor.invoke([HumanMessage(content=prompt_text)])
+    # We pass the dictionary of variables
+    response = chain.invoke(prompt_variables)
     
+    # --- METRICS: CITATION EXTRACTION ---
+    citations = response.response_metadata.get('citations', [])
+    confidence_score = 0.0
+    if citations:
+        trusted_domains = [".gov", ".edu", "reuters.com", "bloomberg.com", "nytimes.com"]
+        trusted_count = sum(1 for url in citations if any(d in url for d in trusted_domains))
+        confidence_score = round(trusted_count / len(citations), 2)
+        print(f"  📊 \033[96mSources Found: {len(citations)} | Confidence: {confidence_score}\033[0m")
+    # ------------------------------------
+
     # 4. Parse JSON
     try:
         clean = response.content.replace("```json", "").replace("```", "").strip()
@@ -60,9 +82,10 @@ def supervisor_node(state: MasterState):
     return {
         "action": decision.get("action"),
         "next_agent": decision.get("next_agent"),
-        # REMOVED: "task_type": ... (The Planner handles this now)
         "search_query": decision.get("search_query"),
-        "final_reply": decision.get("reply_text")
+        "final_reply": decision.get("reply_text"),
+        "citations": citations,
+        "confidence_score": confidence_score
     }
 
 # --- BUILD GRAPH ---
@@ -79,7 +102,6 @@ workflow.set_entry_point("supervisor")
 def router(state: MasterState):
     if state["action"] == "reply":
         return END
-    # Safety: Default to USER if next_agent is None
     return state.get("next_agent") or END
 
 workflow.add_conditional_edges(
@@ -94,7 +116,6 @@ workflow.add_conditional_edges(
     }
 )
 
-# Return Edges
 workflow.add_edge("planner", "supervisor")
 workflow.add_edge("gap_agent", "supervisor")
 workflow.add_edge("researcher", "supervisor")
