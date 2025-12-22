@@ -6,7 +6,9 @@ python-multipart   # Required for File Uploads (Excel/CSV)
 # AI & Agents
 langgraph
 langchain-google-genai
+langchain_openai
 langchain-core
+langchain
 pydantic
 
 # MLOps & Monitoring
@@ -15,6 +17,6 @@ mlflow
 # Data Processing
 pandas
 python-dotenv
-
+holidays
 # Database (Optional for now, but good to have)
 supabase
