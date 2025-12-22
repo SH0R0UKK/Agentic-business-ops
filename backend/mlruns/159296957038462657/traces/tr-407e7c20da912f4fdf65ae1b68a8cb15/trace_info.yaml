@@ -1,0 +1,28 @@
+execution_duration_ms: 89771
+request_preview: '{"messages": [{"content": "I need research on the best startup accelerators
+  in Egypt and their application process", "additional_kwargs": {}, "response_metadata":
+  {}, "type": "human", "name": null, "id": null}], "user_context": {"startup_name":
+  "Test Startup", "stage": "pre-seed", "sector": "fintech", "location": "Egypt"},
+  "action": "route", "next_agent": "research", "search_query": "What are the best
+  startup accelerators in Egypt and their application process?", "task_type": null,
+  "final_plan": null, "research_data": null, "rag_data": null, "gap_analysis": null,
+  "research_offline": null, "research_online": null, "final_reply": null}'
+request_time: '2025-12-22T00:42:50.633Z'
+response_preview: '{"messages": [{"content": "I need research on the best startup
+  accelerators in Egypt and their application process", "additional_kwargs": {}, "response_metadata":
+  {}, "type": "human", "name": null, "id": "7caf615c-34c9-4e5c-bcb1-3e4a2d4ca114"}],
+  "user_context": {"startup_name": "Test Startup", "stage": "pre-seed", "sector":
+  "fintech", "location": "Egypt"}, "next_agent": null, "action": "reply", "task_type":
+  null, "search_query": null, "final_plan": null, "research_data": null, "rag_data":
+  null, "gap_analysis": null, "research_offline": {"question": "best startup accelerators
+  in Egypt 2025 top lists Cairo Alexandria AUC Venture Lab Flat6Labs Falak Startups
+  Innoventures GESR iHub MDI Pmaestro icealex application process deadlines requirements
+  how to apply eligibility criteria", "summary": "Top startup accelerators in Egypt
+  for 2025, primarily in Cairo, include **Flat6Labs**, **Falak Startups**, **AUC Venture
+  Lab**, **MDI**, **Pmaestro**, **Innoventures**, **GESR**, **iHub**, and finte...'
+state: OK
+trace_id: tr-407e7c20da912f4fdf65ae1b68a8cb15
+trace_location:
+  mlflow_experiment:
+    experiment_id: '159296957038462657'
+  type: MLFLOW_EXPERIMENT

@@ -1,0 +1,22 @@
+execution_duration_ms: 416
+request_preview: '{"messages": [{"content": "\nI''m the CEO of PayMasry. We''re a
+  Cairo-based fintech startup with a mobile wallet focused on \nunderbanked Egyptians
+  in rural areas. We raised $500K seed from Flat6Labs and now want to \nraise Series
+  A ($2-3M) to expand across Egypt and enter Saudi Arabia.\n\nBased on the gap analysis,
+  I need you to:\n1. Research the current Egyptian fintech funding landscape and successful
+  Series A examples\n2. Research what investors are looking for in Egyptian fintech
+  startups\n3. Create a 90-day action plan to close our gaps and prepare for fundraising\n4.
+  Include specific milestones, responsible parties, and success metrics\n\nPlease
+  be specific and actionable - we have limited runway (8 months) and need to move
+  fast.\n", "additional_kwargs": {}, "response_metadata": {}, "type": "human", "name":
+  null, "id": null}], "user_context": {"business_name": "PayMasry", "business_type":
+  "FinTech - Mobile Payments & Digital Wallet", "stage": "Seed (seeking Series A)",
+  "founded...'
+request_time: '2025-12-22T00:55:08.840Z'
+response_preview: ''
+state: ERROR
+trace_id: tr-97d6815ddb71a2b9ed52357c13c58161
+trace_location:
+  mlflow_experiment:
+    experiment_id: '565662728625871820'
+  type: MLFLOW_EXPERIMENT

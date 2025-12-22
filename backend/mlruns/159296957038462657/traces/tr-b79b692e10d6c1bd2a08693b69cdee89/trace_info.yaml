@@ -1,0 +1,27 @@
+execution_duration_ms: 25873
+request_preview: '{"messages": [{"content": "Can you research the latest funding trends
+  for Egyptian startups?", "additional_kwargs": {}, "response_metadata": {}, "type":
+  "human", "name": null, "id": null}], "user_context": {"startup_name": "FinTech Co",
+  "stage": "seed", "sector": "fintech"}, "action": null, "next_agent": null, "search_query":
+  null, "task_type": null, "final_plan": null, "research_data": null, "rag_data":
+  null, "gap_analysis": null, "research_offline": null, "research_online": null, "final_reply":
+  null}'
+request_time: '2025-12-22T00:44:20.446Z'
+response_preview: '{"messages": [{"content": "Can you research the latest funding
+  trends for Egyptian startups?", "additional_kwargs": {}, "response_metadata": {},
+  "type": "human", "name": null, "id": "0626fa91-9532-4c52-8bcb-f4f6dd697550"}], "user_context":
+  {"startup_name": "FinTech Co", "stage": "seed", "sector": "fintech"}, "next_agent":
+  null, "action": "reply", "task_type": null, "search_query": null, "final_plan":
+  null, "research_data": null, "rag_data": null, "gap_analysis": null, "research_offline":
+  null, "research_online": null, "final_reply": "Egyptian startups have seen significant
+  funding growth in 2025, leading Africa''s startup ecosystem with $330 million raised
+  across 16 deals in the first five months (31% of Africa''s total, up 130% from 2024),
+  driven by sectors like proptech, fintech, and mobility.[1] Key deals include Nawy
+  ($75M in proptech), MNT-Halan ($50M in fintech), Valu ($27M in BNPL), Thndr ($15.7M
+  in investments), Slydr ($15M in mobility), and MoneyFellows ($13M in digital savin...'
+state: OK
+trace_id: tr-b79b692e10d6c1bd2a08693b69cdee89
+trace_location:
+  mlflow_experiment:
+    experiment_id: '159296957038462657'
+  type: MLFLOW_EXPERIMENT

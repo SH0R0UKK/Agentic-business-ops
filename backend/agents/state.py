@@ -21,9 +21,13 @@ class MasterState(TypedDict):
     
     # --- WORKER OUTPUTS (Data Bubble Up) ---
     final_plan: Optional[dict]        # Output from Planner
-    research_data: Optional[str]      # Output from Online Researcher
-    rag_data: Optional[str]           # Output from Offline RAG
+    research_data: Optional[str]      # Output from Online Researcher (legacy)
+    rag_data: Optional[str]           # Output from Offline RAG (legacy)
     gap_analysis: Optional[str]       # Output from Gap Agent
+    
+    # --- NEW: Research Agent Outputs (Structured) ---
+    research_offline: Optional[dict]  # OfflineEvidencePack from RAG + LLM
+    research_online: Optional[dict]   # OnlineBenchmarkPack from Web + LLM
     
     # --- FINAL OUTPUT ---
     final_reply: Optional[str]        # The text the User sees

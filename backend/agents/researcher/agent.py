@@ -225,3 +225,75 @@ class ResearchAgent:
         return asyncio.run(
             self.perform_combined_research(question, startup_context, profile_context)
         )
+
+
+# --- ORCHESTRATOR ENTRY POINT ---
+async def run_research_agent(state: dict) -> dict:
+    """
+    Entry point for the orchestrator to call the Research Agent.
+    
+    Inputs:
+        state: Current orchestrator state with:
+            - 'messages' (or 'user_question' or 'search_query'): The question to research
+            - 'user_context' (optional): Startup profile context
+    
+    Returns:
+        Dict with:
+            - 'research_offline': OfflineEvidencePack as dict
+            - 'research_online': OnlineBenchmarkPack as dict
+    """
+    logger.info("🔬 Research Agent invoked by orchestrator")
+    
+    # Extract question from state
+    question = None
+    
+    # Try different possible field names
+    if 'search_query' in state and state['search_query']:
+        question = state['search_query']
+    elif 'user_question' in state:
+        question = state['user_question']
+    elif 'messages' in state and state['messages']:
+        # Get last user message
+        last_msg = state['messages'][-1]
+        question = last_msg.content if hasattr(last_msg, 'content') else str(last_msg)
+    
+    if not question:
+        logger.error("No question found in state")
+        return {
+            "research_offline": {
+                "question": "N/A",
+                "summary": "No question provided to research agent",
+                "claims": [],
+                "contradictions": [],
+                "missing_info": [],
+                "status": "error"
+            },
+            "research_online": {
+                "question": "N/A",
+                "summary": "No question provided to research agent",
+                "findings": [],
+                "assumptions": [],
+                "prohibited_uses": [],
+                "status": "error"
+            }
+        }
+    
+    # Extract context
+    startup_context = state.get('user_context', {})
+    profile_context = state.get('user_context', {})
+    
+    logger.info(f"Researching: {question[:100]}...")
+    
+    # Create agent and run research
+    agent = ResearchAgent()
+    result = await agent.perform_combined_research(
+        question=question,
+        startup_context=startup_context,
+        profile_context=profile_context
+    )
+    
+    # Convert Pydantic models to dicts
+    return {
+        "research_offline": result.offline.model_dump() if result.offline else None,
+        "research_online": result.online.model_dump() if result.online else None
+    }

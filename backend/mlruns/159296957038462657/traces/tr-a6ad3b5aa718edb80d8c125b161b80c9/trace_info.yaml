@@ -1,0 +1,28 @@
+execution_duration_ms: 25197
+request_preview: '{"messages": [{"content": "Can you research the latest funding trends
+  for Egyptian startups?", "additional_kwargs": {}, "response_metadata": {}, "type":
+  "human", "name": null, "id": null}], "user_context": {"startup_name": "FinTech Co",
+  "stage": "seed", "sector": "fintech"}, "action": null, "next_agent": null, "search_query":
+  null, "task_type": null, "final_plan": null, "research_data": null, "rag_data":
+  null, "gap_analysis": null, "research_offline": null, "research_online": null, "final_reply":
+  null}'
+request_time: '2025-12-22T00:31:34.540Z'
+response_preview: '{"messages": [{"content": "Can you research the latest funding
+  trends for Egyptian startups?", "additional_kwargs": {}, "response_metadata": {},
+  "type": "human", "name": null, "id": "4faae5fd-a466-4267-b6af-d932e30e6a69"}], "user_context":
+  {"startup_name": "FinTech Co", "stage": "seed", "sector": "fintech"}, "next_agent":
+  null, "action": "reply", "task_type": null, "search_query": null, "final_plan":
+  null, "research_data": null, "rag_data": null, "gap_analysis": null, "research_offline":
+  null, "research_online": null, "final_reply": "Egyptian startups have seen significant
+  funding growth in 2025. In the first five months, they raised $330 million across
+  16 deals (31% of Africa''s total), a 130% increase from 2024, led by Nawy ($75M
+  in proptech), MNT-Halan ($50M in fintech), and Valu ($27M in BNPL).[1] From January
+  to May, funding totaled $228 million.[7] Tech startup investments surged sevenfold
+  from 2020-2025 compared to the prior period, driven by government reforms and platforms
+  l...'
+state: OK
+trace_id: tr-a6ad3b5aa718edb80d8c125b161b80c9
+trace_location:
+  mlflow_experiment:
+    experiment_id: '159296957038462657'
+  type: MLFLOW_EXPERIMENT

@@ -1,0 +1,14 @@
+artifact_uri: file:C:/Users/hanae/OneDrive - Nile University/Desktop/MLops project/Agentic-business-ops/mlruns/565662728625871820/3ab16d5d005b488b8e8c230910c69c28/artifacts
+end_time: 1766365637536
+entry_point_name: ''
+experiment_id: '565662728625871820'
+lifecycle_stage: active
+run_id: 3ab16d5d005b488b8e8c230910c69c28
+run_name: peaceful-finch-405
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766365551455
+status: 3
+tags: []
+user_id: hanae
