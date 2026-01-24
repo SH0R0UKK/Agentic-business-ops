@@ -85,3 +85,18 @@ planner_prompt_template = ChatPromptTemplate.from_messages([
     ("system", PLANNER_SYSTEM_TEMPLATE),
     ("human", "{user_msg}")
 ])
+
+
+# --- 3. HELPER FUNCTION ---
+def get_planner_prompt(current_date, user_context: dict) -> str:
+    """
+    Generates the system prompt for the Planner using dynamic business data.
+    """
+    business_name = user_context.get('business_name', 'The Business')
+    user_context_str = str(user_context)
+    
+    return PLANNER_SYSTEM_TEMPLATE.format(
+        business_name=business_name,
+        current_date=str(current_date),
+        user_context_str=user_context_str
+    )

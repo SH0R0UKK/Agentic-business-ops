@@ -1,8 +1,8 @@
 import os, json, uuid
 from datetime import datetime
 from typing import Dict, List
-from tools.llm import call_llm
-from tools.validators import filter_and_cap_gaps
+from backend.tools.llm import call_llm
+from backend.tools.validators import filter_and_cap_gaps
 
 # LangSmith tracing via env, as commonly done with LangGraph/LangChain stacks.[web:54]
 PROJECT = os.getenv("LANGCHAIN_PROJECT", "Agentic_business_ops")

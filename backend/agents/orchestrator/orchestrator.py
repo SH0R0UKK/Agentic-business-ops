@@ -286,26 +286,14 @@ def supervisor_node(state: MasterState):
     - Gap Analysis: {gap_status}
     """
 
-    # 2. Prepare Variables (Logic moved here to avoid "ValueError" in templates)
-    # FIX 2: We calculate the strings here, so the prompt just sees clean variables
-   # 2. Prepare Variables
-    prompt_variables = {
-        # CHANGE THIS: Use 'biz_name' to match the {biz_name} in your template
-        "biz_name": user_context.get('business_name', 'The Business'),
-        
-        # CHANGE THIS: Use 'biz_type' to match the {biz_type} in your template
-        "biz_type": user_context.get('business_type', 'General Business'),
-        
-        "goals": str(user_context.get('goals', 'Improve operations')),
-        "context_snapshot": context_snapshot,
-        "user_msg": last_user_msg
-    }
-    # 3. Create Chain & Invoke
-    # FIX 3: Use the chain (Template | LLM)
-    chain = supervisor_prompt_template | llm_supervisor
+    # 2. Create prompt and invoke LLM directly
+    system_prompt = get_supervisor_prompt(context_snapshot, last_user_msg, user_context)
     
-    # We pass the dictionary of variables
-    response = chain.invoke(prompt_variables)
+    # Invoke LLM with the generated prompt
+    response = llm_supervisor.invoke([
+        SystemMessage(content=system_prompt),
+        HumanMessage(content=last_user_msg)
+    ])
     
     # 4. Force response to JSON format (handles all edge cases)
     try:

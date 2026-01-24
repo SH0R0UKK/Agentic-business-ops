@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
-import { Home, Calendar, Settings, Moon, Sun, Sparkles, MessageSquare, AlertTriangle, FileSearch } from "lucide-react"
+import { Home, Calendar, Settings, Moon, Sun, Sparkles, MessageSquare, AlertTriangle, FileSearch, Rocket } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -22,6 +22,11 @@ const menuItems = [
     title: "Dashboard",
     url: "/",
     icon: Home,
+  },
+  {
+    title: "Startup Hub",
+    url: "/startup-hub",
+    icon: Rocket,
   },
   {
     title: "Messages",
