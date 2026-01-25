@@ -2,10 +2,11 @@
 FastAPI Backend API for Agentic Business Ops Platform.
 Provides endpoints for document upload, questions, and plan generation.
 
-Run with: uvicorn backend.api:app --reload --port 8000
+Run with: python backend/api.py
 """
 
 import os
+import sys
 import uuid
 import json
 import shutil
@@ -13,6 +14,9 @@ import logging
 from pathlib import Path
 from datetime import datetime
 from typing import Optional, List, Dict, Any
+
+# Add parent directory to path for imports to work
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
