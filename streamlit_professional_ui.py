@@ -10,13 +10,15 @@ import os
 from datetime import datetime
 from pathlib import Path
 
-# Page config
-st.set_page_config(
-    page_title="Business Ops AI Platform",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="collapsed"
-)
+# Only set page config if not already set (when run standalone)
+if 'page_config_set' not in st.session_state:
+    st.set_page_config(
+        page_title="Business Ops AI Platform",
+        page_icon="📊",
+        layout="wide",
+        initial_sidebar_state="collapsed"
+    )
+    st.session_state.page_config_set = True
 
 # API Base URL - use environment variable for production, fallback to localhost
 API_BASE = os.getenv("API_BASE_URL", "http://localhost:8000")
