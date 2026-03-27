@@ -15,6 +15,9 @@ The system uses a centralized Orchestrator to manage specialized agents:
 
 - PlanningAgent: Formulates the final strategic roadmap.
 
+![MLops](https://github.com/user-attachments/assets/64246d1d-e587-407c-b82d-9600a7cb1716)
+
+
 # Tech Stack
 - Framework: LangGraph (Multi-agent orchestration)
 
