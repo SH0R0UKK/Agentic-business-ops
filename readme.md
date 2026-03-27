@@ -2,7 +2,7 @@
 An autonomous consulting platform designed to provide seed and pre-seed startups with evidence-backed, actionable business intelligence.
 
 # Overview
-Leveraging a Supervisor-Worker multi-agent architecture, this system automates the consulting lifecycle—from initial profiling to research and gap analysis. It achieves a 0% hallucination rate on benchmark datasets by utilizing a rigorous factual grounding evaluation framework.
+Leveraging a Supervisor-Worker multi-agent architecture, this system automates the consulting lifecycle, from initial profiling to research and gap analysis. It utilizes a rigorous factual grounding evaluation framework to provide valuable insights.
 
 # System Architecture
 The system uses a centralized Orchestrator to manage specialized agents:
