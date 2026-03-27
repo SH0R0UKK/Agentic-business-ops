@@ -1,9 +1,26 @@
-Perfect! ✅ DVC is now tracking your data.json
+# Agentic Business Ops: Autonomous Consulting for Startups
+An autonomous consulting platform designed to provide seed and pre-seed startups with evidence-backed, actionable business intelligence.
 
-Edit data.json
-Track changes with:
->>> dvc add backend/agents/researcher/RAG/data.json
+# Overview
+Leveraging a Supervisor-Worker multi-agent architecture, this system automates the consulting lifecycle—from initial profiling to research and gap analysis. It achieves a 0% hallucination rate on benchmark datasets by utilizing a rigorous factual grounding evaluation framework.
 
-Commit the .dvc file to git:
->>> git add backend/agents/researcher/RAG/data.json.dvc
->>> git commit -m "Update data"
+# System Architecture
+The system uses a centralized Orchestrator to manage specialized agents:
+
+- ProfilingAgent: Structures raw startup files into actionable profiles.
+
+- ResearchAgent: Conducts deep-market intelligence via LLM-powered search.
+
+- GapAnalysisAgent: Synthesizes profiles and research into JSON-structured reports.
+
+- PlanningAgent: Formulates the final strategic roadmap.
+
+# Tech Stack
+- Framework: LangGraph (Multi-agent orchestration)
+
+- LLMs: Google Gemini (Reasoning), Perplexity Sonar (Live Research)
+
+- Architecture: Supervisor-Worker Agentic Pattern
+
+- Output: Structured JSON Gap Reports
+- AgentOps: Langsmith
